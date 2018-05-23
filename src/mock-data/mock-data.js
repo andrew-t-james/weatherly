@@ -1,4 +1,4 @@
-const data = {
+export const data = {
   response: {
     version: '0.1',
     termsofService: 'http://www.wunderground.com/weather/api/d/terms.html',
@@ -2863,4 +2863,6 @@ const data = {
   ]
 };
 
-export default data;
+export const sevenDay = {
+  sevenDay: data.forecast.simpleforecast.forecastday,
+};
