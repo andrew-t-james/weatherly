@@ -1,23 +1,20 @@
 import React from 'react';
+import ForecastCard from '../ForecastCard/ForecastCard.js';
+
 
 const SevenDayForecast = (props) => {
-  const { sevenDay } = props.sevenDayForecast;
+  const { tenDayForecast } = props.dailyForecast;
+  const sevenDayForecast = tenDayForecast.slice(0, 7);
 
-  console.log(sevenDay);
   return (
-    <div>
-      <h1>SevenDay</h1>
-      <ul>
+    <div className="seven-day-forecast">
+      <h1 className="seven-day-forecast-title">SevenDay Forecast</h1>
+      <ul className="seven-day-forecast-list">
         {
-          sevenDay.slice(0, 7).map((forecast, index) =>
-            <li
-              key={index}>
-              <h2>{forecast.date.weekday_short}</h2>
-              <p>{forecast.conditions}</p>
-              <img src={forecast.icon_url} alt={forecast.icon}/>
-              <p>{forecast.high.fahrenheit}</p>
-              <p>{forecast.low.fahrenheit}</p>
-            </li>
+          sevenDayForecast.map((forecast, index) =>
+            <ForecastCard
+              key={index}
+              forecast={forecast}/>
           )
         }
       </ul>

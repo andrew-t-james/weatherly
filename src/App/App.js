@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
 import SevenDayForecast from '../SevenDayForecast/SevenDayForecast.js';
 
-import { data, sevenDay } from '../mock-data/mock-data.js';
+import { data, dailyForecast } from '../mock-data/mock-data.js';
 
 class App extends Component {
 
@@ -13,7 +13,7 @@ class App extends Component {
         <CurrentWeather
           currentWeather={data.current_observation} />
         <SevenDayForecast
-          sevenDayForecast={sevenDay} />
+          dailyForecast={dailyForecast} />
       </div>
     );
   }

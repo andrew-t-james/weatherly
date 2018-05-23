@@ -2863,6 +2863,6 @@ export const data = {
   ]
 };
 
-export const sevenDay = {
-  sevenDay: data.forecast.simpleforecast.forecastday,
+export const dailyForecast = {
+  tenDayForecast: data.forecast.simpleforecast.forecastday,
 };
