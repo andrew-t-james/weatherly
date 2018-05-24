@@ -3,6 +3,7 @@ import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 
 import { currentLocation, dailyForecast } from '../../mock-data/mock-data.js';
+
 class App extends Component {
   constructor() {
     super();
@@ -14,7 +15,8 @@ class App extends Component {
         currentWeather: null,
         local_time_rfc822: null,
         temperature_string: null,
-        wind_string: null
+        wind_string: null,
+        icon_url: null
       },
       tenDayForecast: []
     };

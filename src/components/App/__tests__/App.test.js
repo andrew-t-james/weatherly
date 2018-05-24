@@ -4,7 +4,7 @@ import App from '../App.js';
 import TenDayForecast from '../../TenDayForecast/TenDayForecast.js';
 import CurrentWeather from '../../CurrentWeather/CurrentWeather.js';
 
-import { data, currentLocation, dailyForecast } from '../../../mock-data/mock-data.js';
+import { currentLocation, dailyForecast } from '../../../mock-data/mock-data.js';
 
 describe('App unit tests', () => {
   let app;
@@ -19,7 +19,8 @@ describe('App unit tests', () => {
       currentWeather: null,
       local_time_rfc822: null,
       temperature_string: null,
-      wind_string: null
+      wind_string: null,
+      icon_url: null
     };
 
     const actual = app.state('currentLocation');
@@ -43,7 +44,8 @@ describe('App unit tests', () => {
       currentWeather: null,
       local_time_rfc822: null,
       temperature_string: null,
-      wind_string: null
+      wind_string: null,
+      icon_url: null
     };
 
     const actual = app.state('currentLocation');
@@ -883,7 +885,6 @@ describe('App unit tests', () => {
         }
       ]
     };
-
 
     app.setState({
       currentLocation: currentLocation(),
