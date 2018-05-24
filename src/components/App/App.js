@@ -5,7 +5,6 @@ import SevenDayForecast from '../SevenDayForecast/SevenDayForecast.js';
 import { data, dailyForecast } from '../../mock-data/mock-data.js';
 
 class App extends Component {
-
   render() {
     return (
       <div>
@@ -13,7 +12,7 @@ class App extends Component {
         <CurrentWeather
           currentWeather={data.current_observation} />
         <SevenDayForecast
-          dailyForecast={dailyForecast} />
+          dailyForecast={dailyForecast()} />
       </div>
     );
   }
