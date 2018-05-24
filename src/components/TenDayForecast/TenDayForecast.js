@@ -1,14 +1,16 @@
 import React from 'react';
 import ForecastCard from '../ForecastCard/ForecastCard.js';
 
+import './TenDayForecast.css';
+
 
 const TenDayForecast = (props) => {
   const { tenDayForecast } = props.dailyForecast;
 
   return (
-    <div className="seven-day-forecast">
-      <h1 className="seven-day-forecast-title">Ten Day Forecast</h1>
-      <ul className="seven-day-forecast-list">
+    <div className="forecast">
+      <h1 className="forecast-title">Ten Day Forecast</h1>
+      <ul className="forecast-list">
         {
           tenDayForecast.map((forecast, index) =>
             <ForecastCard

@@ -1,0 +1,21 @@
+.forecast {
+  border: 1px solid red;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.forecast-list {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  justify-content: space-around;
+  list-style: none;
+  text-align: center;
+}
+
+@media screen and  (min-width: 560px) {
+  .forecast-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

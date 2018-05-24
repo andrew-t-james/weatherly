@@ -5,6 +5,13 @@ import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 import { data, dailyForecast } from '../../mock-data/mock-data.js';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      tenDayForecast: []
+    };
+  }
+
   render() {
     return (
       <div>
@@ -12,7 +19,7 @@ class App extends Component {
         <CurrentWeather
           currentWeather={data.current_observation} />
         <TenDayForecast
-          dailyForecast={dailyForecast()} />
+          dailyForecast={this.state.tenDayForecast} />
       </div>
     );
   }
