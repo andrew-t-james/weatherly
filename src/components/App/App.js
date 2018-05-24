@@ -11,7 +11,7 @@ class App extends Component {
         <h1>Weathrly App</h1>
         <CurrentWeather
           currentWeather={data.current_observation} />
-        <SevenDayForecast
+        <TenDayForecast
           dailyForecast={dailyForecast()} />
       </div>
     );
