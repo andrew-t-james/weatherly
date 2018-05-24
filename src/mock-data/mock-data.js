@@ -2863,6 +2863,6 @@ export const data = {
   ]
 };
 
-export const dailyForecast = () => {
-  return data.forecast.simpleforecast.forecastday;
-};
+export const currentLocation = () => data.current_observation;
+
+export const dailyForecast = () => data.forecast.simpleforecast.forecastday;

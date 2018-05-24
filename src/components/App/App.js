@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 
-import { data, dailyForecast } from '../../mock-data/mock-data.js';
+import { currentLocation, dailyForecast } from '../../mock-data/mock-data.js';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      forecast: []
+      currentLocation: {
+        display_location: {
+          city: null
+        },
+        currentWeather: null,
+        local_time_rfc822: null,
+        temperature_string: null,
+        wind_string: null
+      },
+      tenDayForecast: []
     };
   }
 
@@ -16,21 +25,22 @@ class App extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        forecast: dailyForecast()
+        currentLocation: currentLocation(),
+        tenDayForecast: dailyForecast()
       });
     }, 2000);
   }
 
   render() {
-    const { forecast } = this.state;
+    const { tenDayForecast, currentLocation } = this.state;
 
     return (
       <div>
         <h1>Weathrly App</h1>
         <CurrentWeather
-          currentWeather={data.current_observation} />
+          currentWeather={currentLocation} />
         <TenDayForecast
-          tenDayForecast={forecast} />
+          tenDayForecast={tenDayForecast} />
       </div>
     );
   }
