@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
-import SevenDayForecast from '../SevenDayForecast/SevenDayForecast.js';
+import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 
 import { data, dailyForecast } from '../../mock-data/mock-data.js';
 
@@ -12,7 +12,7 @@ class App extends Component {
         <h1>Weathrly App</h1>
         <CurrentWeather
           currentWeather={data.current_observation} />
-        <SevenDayForecast
+        <TenDayForecast
           dailyForecast={dailyForecast} />
       </div>
     );
