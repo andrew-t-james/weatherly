@@ -3,7 +3,6 @@ import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 
 import { currentLocation, dailyForecast } from '../../mock-data/mock-data.js';
-
 class App extends Component {
   constructor() {
     super();
