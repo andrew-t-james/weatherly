@@ -4,7 +4,7 @@ import App from '../App.js';
 import TenDayForecast from '../../TenDayForecast/TenDayForecast.js';
 import CurrentWeather from '../../CurrentWeather/CurrentWeather.js';
 
-import { currentLocation, dailyForecast } from '../../../mock-data/mock-data.js';
+import { data, currentLocation, dailyForecast } from '../../../mock-data/mock-data.js';
 
 describe('App unit tests', () => {
   let app;
@@ -887,8 +887,8 @@ describe('App unit tests', () => {
     };
 
     app.setState({
-      currentLocation: currentLocation(),
-      tenDayForecast: dailyForecast()
+      currentLocation: currentLocation(data),
+      tenDayForecast: dailyForecast(data)
     });
 
     const actual = app.state();

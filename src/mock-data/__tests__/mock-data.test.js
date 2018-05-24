@@ -2,7 +2,7 @@ import { data, currentLocation, dailyForecast } from '../mock-data.js';
 
 describe('Mock data unit tests', () => {
   test('returns weather for current location', () => {
-    const actual = currentLocation();
+    const actual = currentLocation(data);
 
     const expected =   data.current_observation;
 
@@ -10,7 +10,7 @@ describe('Mock data unit tests', () => {
   });
 
   test('returns daily for 10 days', () => {
-    const actual = dailyForecast();
+    const actual = dailyForecast(data);
 
     const expected =   data.forecast.simpleforecast.forecastday;
 
