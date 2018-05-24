@@ -12,7 +12,7 @@ describe('', () => {
   test('It should have a default state of [] for tenDayForecast', () => {
     const expected = [];
 
-    const actual = app.state('tenDayForecast');
+    const actual = app.state('forecast');
 
     expect(actual).toEqual(expected);
   });

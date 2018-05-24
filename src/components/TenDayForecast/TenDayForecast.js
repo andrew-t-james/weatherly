@@ -5,7 +5,7 @@ import './TenDayForecast.css';
 
 
 const TenDayForecast = (props) => {
-  const { tenDayForecast } = props.dailyForecast;
+  const { tenDayForecast } = props;
 
   return (
     <div className="forecast">

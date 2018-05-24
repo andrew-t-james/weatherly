@@ -1,15 +1,16 @@
 import React from 'react';
 
+import './CurrentWeather.css';
+
 const CurrentWeather = (props) => {
-  console.log(props);
   return (
-    <div>
+    <div className="current-weather">
       <h2>Current Weather</h2>
-      <h3>{props.currentWeather.display_location.city}</h3>
-      <h3>{props.currentWeather.weather}</h3>
-      <h3>{props.currentWeather.local_time_rfc822}</h3>
-      <h3>{props.currentWeather.temperature_string}</h3>
-      <h3>{props.currentWeather.wind_string}</h3>
+      <p>{props.currentWeather.display_location.city}</p>
+      <p>{props.currentWeather.weather}</p>
+      <p>{props.currentWeather.local_time_rfc822}</p>
+      <p>{props.currentWeather.temperature_string}</p>
+      <p>{props.currentWeather.wind_string}</p>
     </div>
   );
 };

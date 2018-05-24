@@ -8,18 +8,29 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      tenDayForecast: []
+      forecast: []
     };
   }
 
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        forecast: dailyForecast()
+      });
+    }, 2000);
+  }
+
   render() {
+    const { forecast } = this.state;
+
     return (
       <div>
         <h1>Weathrly App</h1>
         <CurrentWeather
           currentWeather={data.current_observation} />
         <TenDayForecast
-          dailyForecast={this.state.tenDayForecast} />
+          tenDayForecast={forecast} />
       </div>
     );
   }
