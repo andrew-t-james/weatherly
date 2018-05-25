@@ -3,21 +3,21 @@ import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 
-import { data, currentLocation, dailyForecast, hourlyForecast } from '../../mock-data/mock-data.js';
+import { data, locationForecast, dailyForecast, hourlyForecast } from '../../mock-data/mock-data.js';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       currentLocation: {
-        display_location: {
-          city: null
-        },
-        currentWeather: null,
-        local_time_rfc822: null,
-        temperature_string: null,
-        wind_string: null,
-        icon_url: null
+        city: null,
+        weather: null,
+        icon: null,
+        iconUrl: null,
+        temperature: null,
+        high: null,
+        low: null,
+        description: null
       },
       tenDayForecast: []
     };
@@ -27,7 +27,7 @@ class App extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        currentLocation: currentLocation(data),
+        currentLocation: locationForecast(data),
         tenDayForecast: dailyForecast(data)
       });
     }, 1500);

@@ -2,16 +2,16 @@ import React from 'react';
 import './ForecastCard.css';
 
 const ForecastCard = (props) => {
-  const { forecast } = props;
+  const { day, iconUrl, iconTitle, high, low, conditions } = props.forecast;
 
   return (
     <li className="forecast-list-item">
-      <h2>{forecast.date.weekday_short}</h2>
-      <img src={forecast.icon_url} alt={forecast.icon}/>
-      <p className="forecast-conditions">{forecast.conditions}</p>
+      <h2>{day}</h2>
+      <img src={iconUrl} alt={iconTitle}/>
+      <p className="forecast-conditions">{conditions}</p>
       <div className="high-low">
-        <p>{forecast.high.fahrenheit} &uarr;</p>
-        <p>{forecast.low.fahrenheit} &darr;</p>
+        <p>{high} &uarr;</p>
+        <p>{low} &darr;</p>
       </div>
     </li>
   );
