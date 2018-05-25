@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
+import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 
-import { data, currentLocation, dailyForecast } from '../../mock-data/mock-data.js';
+import { data, currentLocation, dailyForecast, hourlyForecast } from '../../mock-data/mock-data.js';
 
 class App extends Component {
   constructor() {
@@ -29,7 +30,7 @@ class App extends Component {
         currentLocation: currentLocation(data),
         tenDayForecast: dailyForecast(data)
       });
-    }, 2000);
+    }, 1500);
     // fetch('http://api.wunderground.com/api/b6ad6560d07587c6/forecast/forecast10day/conditions/hourly/q/CA/San_Francisco.json')
     //   .then(response => response.json())
     //   .then(location => {
@@ -42,7 +43,8 @@ class App extends Component {
     //     this.setState({
     //       tenDayForecast: dailyForecast(tenDay)
     //     });
-    //   });
+    //   })
+    //   .catch(error => console.error(error));
   }
 
   render() {
@@ -53,6 +55,8 @@ class App extends Component {
         <h1>Weathrly App</h1>
         <CurrentWeather
           currentWeather={currentLocation} />
+        <SevenHour
+          hourly={hourlyForecast(data)} />
         <TenDayForecast
           tenDayForecast={tenDayForecast} />
       </div>

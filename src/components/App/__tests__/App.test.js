@@ -890,7 +890,6 @@ describe('App unit tests', () => {
       currentLocation: currentLocation(data),
       tenDayForecast: dailyForecast(data)
     });
-
     const actual = app.state();
 
     expect(actual).toEqual(expected);

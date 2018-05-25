@@ -2864,5 +2864,5 @@ export const data = {
 };
 
 export const currentLocation = (data) => data.current_observation;
-
+export const hourlyForecast = (data) => data.hourly_forecast;
 export const dailyForecast = (data) => data.forecast.simpleforecast.forecastday;

@@ -15,7 +15,7 @@ const TenDayForecast = (props) => {
           tenDayForecast.map((forecast, index) =>
             <ForecastCard
               key={index}
-              forecast={forecast}/>
+              forecast={forecast} />
           )
         }
       </ul>
