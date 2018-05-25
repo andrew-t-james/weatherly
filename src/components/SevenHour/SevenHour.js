@@ -4,7 +4,6 @@ import ForecastCard from '../ForecastCard/ForecastCard.js';
 const SevenHour = (props) => {
   const { hourly } = props;
 
-  console.log(hourly);
   return (
     <div className="forecast">
       <h1 className="forecast-title">Seven Hour</h1>

@@ -7,15 +7,15 @@ const CurrentWeather = (props) => {
 
   return (
     <div className="current-weather">
-      <h2>{city}</h2>
-      <p>{weather}</p>
-      <p>{temperature}</p>
-      <img src={iconUrl} alt={icon}/>
+      <h2 className="current-weather__title">{city}</h2>
+      <p className="current-weather__weather">{weather}</p>
+      <p className="current-weather__temperature">{temperature}</p>
+      <img className="current-weather__icon" src={iconUrl} alt={icon}/>
       <div className="high-low">
-        <p>{high}  &uarr;</p>
-        <p>{low} &darr;</p>
+        <p className="current-weather__high">{high} &uarr;</p>
+        <p className="current-weather__low">{low} &darr;</p>
       </div>
-      <p>{description}</p>
+      <p className="current-weather__description">{description}</p>
     </div>
   );
 };

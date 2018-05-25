@@ -4,14 +4,15 @@ import { dailyForecast, hourlyForecast, locationForecast } from '../data-helpers
 describe('Helper functions unit tests', () => {
   test('returns weather for current location', () => {
     const expected = {
-      city: 'Louisville',
-      description: 'Sun and clouds mixed. High 51F. Winds NE at 10 to 15 mph.',
-      high: '51',
-      icon: 'mostlycloudy',
-      iconUrl: 'http://icons.wxug.com/i/c/k/mostlycloudy.gif',
-      low: '32',
+      city: "Louisville",
+      description: "Sun and clouds mixed. High 51F. Winds NE at 10 to 15 mph.",
+      high: "51",
+      icon: "mostlycloudy",
+      iconUrl: "http://icons.wxug.com/i/c/k/mostlycloudy.gif",
+      low: "32",
       temperature: 46,
-      weather: 'Mostly Cloudy'
+      weather: "Mostly Cloudy",
+      weekDay: "Wednesday"
     };
 
     const actual = locationForecast(data);
@@ -111,56 +112,56 @@ describe('Helper functions unit tests', () => {
   test('returns hourly weather', () => {
     const expected = [
       {
-        conditions: "Partly Cloudy",
-        day: "Wednesday",
+        conditions: 47,
+        day: 12,
         high: null,
         iconTitle: "partlycloudy",
         iconUrl: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
         low: null
       },
       {
-        conditions: "Partly Cloudy",
-        day: "Wednesday",
+        conditions: 49,
+        day: 13,
         high: null,
         iconTitle: "partlycloudy",
         iconUrl: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
         low: null
       },
       {
-        conditions: "Partly Cloudy",
-        day: "Wednesday",
+        conditions: 49,
+        day: 14,
         high: null,
         iconTitle: "partlycloudy",
         iconUrl: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
         low: null
       },
       {
-        conditions: "Clear",
-        day: "Wednesday",
+        conditions: 51,
+        day: 15,
         high: null,
         iconTitle: "clear",
         iconUrl: "http://icons.wxug.com/i/c/k/clear.gif",
         low: null
       },
       {
-        conditions: "Clear",
-        day: "Wednesday",
+        conditions: 50,
+        day: 16,
         high: null,
         iconTitle: "clear",
         iconUrl: "http://icons.wxug.com/i/c/k/clear.gif",
         low: null
       },
       {
-        conditions: "Clear",
-        day: "Wednesday",
+        conditions: 48,
+        day: 17,
         high: null,
         iconTitle: "clear",
         iconUrl: "http://icons.wxug.com/i/c/k/clear.gif",
         low: null
       },
       {
-        conditions: "Clear",
-        day: "Wednesday",
+        conditions: 45,
+        day: 18,
         high: null,
         iconTitle: "clear",
         iconUrl: "http://icons.wxug.com/i/c/k/nt_clear.gif",

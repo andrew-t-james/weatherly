@@ -7,7 +7,8 @@ export const locationForecast = (weatherData) =>{
     temperature: weatherData.current_observation.temp_f,
     high: weatherData.forecast.simpleforecast.forecastday[0].high.fahrenheit,
     low: weatherData.forecast.simpleforecast.forecastday[0].low.fahrenheit,
-    description: weatherData.forecast.txt_forecast.forecastday[0].fcttext
+    description: weatherData.forecast.txt_forecast.forecastday[0].fcttext,
+    weekDay: weatherData.forecast.simpleforecast.forecastday[0].date.weekday
   };
 
   return location;
@@ -33,22 +34,20 @@ export const dailyForecast = (weatherData) => {
   return tenDayForecast;
 };
 
-// export const hourlyForecast = (weatherData) => weatherData.hourly_forecast;
 export const hourlyForecast = (weatherData) => {
   const originalHourlyForecast =  weatherData.hourly_forecast.slice(0, 7);
   const sevenHourForecast = [];
 
   originalHourlyForecast.forEach((hour) => {
     const dailyForecast = {
-      day: hour.FCTTIME.weekday_name,
-      conditions: hour.condition,
+      day: Number(hour.FCTTIME.hour_padded),
+      conditions: Number(hour.temp.english),
       iconUrl: hour.icon_url,
       iconTitle: hour.icon,
       high: null,
       low: null,
     };
 
-    // console.log(hour);
     sevenHourForecast.push(dailyForecast);
   });
   return sevenHourForecast;

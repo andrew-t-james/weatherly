@@ -20,7 +20,8 @@ class App extends Component {
         low: null,
         description: null
       },
-      tenDayForecast: []
+      sevenHour: [],
+      tenDayForecast: [],
     };
   }
 
@@ -29,9 +30,10 @@ class App extends Component {
     setTimeout(() => {
       this.setState({
         currentLocation: locationForecast(data),
+        sevenHour: hourlyForecast(data),
         tenDayForecast: dailyForecast(data)
       });
-    }, 1500);
+    }, 100);
     // fetch('http://api.wunderground.com/api/b6ad6560d07587c6/forecast/forecast10day/conditions/hourly/q/CA/San_Francisco.json')
     //   .then(response => response.json())
     //   .then(response => {
@@ -44,7 +46,7 @@ class App extends Component {
   }
 
   render() {
-    const { tenDayForecast, currentLocation } = this.state;
+    const { tenDayForecast, currentLocation, sevenHour } = this.state;
 
     return (
       <div>
@@ -52,7 +54,7 @@ class App extends Component {
         <CurrentWeather
           currentWeather={currentLocation} />
         <SevenHour
-          hourly={hourlyForecast(data)} />
+          hourly={sevenHour} />
         <TenDayForecast
           tenDayForecast={tenDayForecast} />
       </div>

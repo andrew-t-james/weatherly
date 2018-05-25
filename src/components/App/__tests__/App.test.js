@@ -35,6 +35,14 @@ describe('App unit tests', () => {
     expect(actual).toEqual(expected);
   });
 
+  test('It should have a default state of [] for tenDayForecast', () => {
+    const expected = [];
+
+    const actual = app.state('sevenHour');
+
+    expect(actual).toEqual(expected);
+  });
+
   // test('It should update state after update state', async () => {
   //   const expected = {
   //     currentLocation: {
