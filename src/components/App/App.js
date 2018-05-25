@@ -33,15 +33,10 @@ class App extends Component {
     }, 1500);
     // fetch('http://api.wunderground.com/api/b6ad6560d07587c6/forecast/forecast10day/conditions/hourly/q/CA/San_Francisco.json')
     //   .then(response => response.json())
-    //   .then(location => {
+    //   .then(response => {
     //     this.setState({
-    //       currentLocation: currentLocation(location)
-    //     });
-    //     return location;
-    //   })
-    //   .then(tenDay => {
-    //     this.setState({
-    //       tenDayForecast: dailyForecast(tenDay)
+    //       currentLocation: locationForecast(response),
+    //       tenDayForecast: dailyForecast(response)
     //     });
     //   })
     //   .catch(error => console.error(error));

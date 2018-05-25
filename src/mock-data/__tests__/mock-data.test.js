@@ -102,7 +102,6 @@ describe('Mock data unit tests', () => {
       }
     ];
 
-
     const actual = dailyForecast(data);
 
     expect(actual).toEqual(expected);
