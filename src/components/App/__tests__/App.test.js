@@ -4,7 +4,6 @@ import App from '../App.js';
 import TenDayForecast from '../../TenDayForecast/TenDayForecast.js';
 import CurrentWeather from '../../CurrentWeather/CurrentWeather.js';
 
-// import { data, locationForecast, dailyForecast } from '../../../mock-data/mock-data.js';
 
 describe('App unit tests', () => {
   let app;

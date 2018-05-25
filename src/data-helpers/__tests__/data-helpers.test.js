@@ -1,4 +1,5 @@
-import { data, dailyForecast, hourlyForecast, locationForecast } from '../mock-data.js';
+import { data } from '../../mock-data/mock-data';
+import { dailyForecast, hourlyForecast, locationForecast } from '../data-helpers.js';
 
 describe('Mock data unit tests', () => {
   test('returns weather for current location', () => {

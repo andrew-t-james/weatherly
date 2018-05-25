@@ -3,7 +3,8 @@ import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 
-import { data, locationForecast, dailyForecast, hourlyForecast } from '../../mock-data/mock-data.js';
+import { data } from '../../mock-data/mock-data.js';
+import { locationForecast, dailyForecast, hourlyForecast } from '../../data-helpers/data-helpers.js';
 
 class App extends Component {
   constructor() {
