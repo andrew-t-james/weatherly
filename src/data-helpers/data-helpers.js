@@ -13,7 +13,6 @@ export const locationForecast = (weatherData) =>{
   return location;
 };
 
-export const hourlyForecast = (weatherData) => weatherData.hourly_forecast;
 
 export const dailyForecast = (weatherData) => {
   const originalForecastArray =  weatherData.forecast.simpleforecast.forecastday;
@@ -32,4 +31,25 @@ export const dailyForecast = (weatherData) => {
     tenDayForecast.push(dailyForecast);
   });
   return tenDayForecast;
+};
+
+// export const hourlyForecast = (weatherData) => weatherData.hourly_forecast;
+export const hourlyForecast = (weatherData) => {
+  const originalHourlyForecast =  weatherData.hourly_forecast.slice(0, 7);
+  const sevenHourForecast = [];
+
+  originalHourlyForecast.forEach((hour) => {
+    const dailyForecast = {
+      day: hour.FCTTIME.weekday_name,
+      conditions: hour.condition,
+      iconUrl: hour.icon_url,
+      iconTitle: hour.icon,
+      high: null,
+      low: null,
+    };
+
+    // console.log(hour);
+    sevenHourForecast.push(dailyForecast);
+  });
+  return sevenHourForecast;
 };

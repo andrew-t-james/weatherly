@@ -1,7 +1,7 @@
 import { data } from '../../mock-data/mock-data';
 import { dailyForecast, hourlyForecast, locationForecast } from '../data-helpers.js';
 
-describe('Mock data unit tests', () => {
+describe('Helper functions unit tests', () => {
   test('returns weather for current location', () => {
     const expected = {
       city: 'Louisville',
@@ -109,9 +109,66 @@ describe('Mock data unit tests', () => {
   });
 
   test('returns hourly weather', () => {
-    const actual = hourlyForecast(data);
+    const expected = [
+      {
+        conditions: "Partly Cloudy",
+        day: "Wednesday",
+        high: null,
+        iconTitle: "partlycloudy",
+        iconUrl: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+        low: null
+      },
+      {
+        conditions: "Partly Cloudy",
+        day: "Wednesday",
+        high: null,
+        iconTitle: "partlycloudy",
+        iconUrl: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+        low: null
+      },
+      {
+        conditions: "Partly Cloudy",
+        day: "Wednesday",
+        high: null,
+        iconTitle: "partlycloudy",
+        iconUrl: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+        low: null
+      },
+      {
+        conditions: "Clear",
+        day: "Wednesday",
+        high: null,
+        iconTitle: "clear",
+        iconUrl: "http://icons.wxug.com/i/c/k/clear.gif",
+        low: null
+      },
+      {
+        conditions: "Clear",
+        day: "Wednesday",
+        high: null,
+        iconTitle: "clear",
+        iconUrl: "http://icons.wxug.com/i/c/k/clear.gif",
+        low: null
+      },
+      {
+        conditions: "Clear",
+        day: "Wednesday",
+        high: null,
+        iconTitle: "clear",
+        iconUrl: "http://icons.wxug.com/i/c/k/clear.gif",
+        low: null
+      },
+      {
+        conditions: "Clear",
+        day: "Wednesday",
+        high: null,
+        iconTitle: "clear",
+        iconUrl: "http://icons.wxug.com/i/c/k/nt_clear.gif",
+        low: null
+      }
+    ];
 
-    const expected = data.hourly_forecast;
+    const actual = hourlyForecast(data);
 
     expect(actual).toEqual(expected);
   });

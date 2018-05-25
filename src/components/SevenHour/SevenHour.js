@@ -9,13 +9,13 @@ const SevenHour = (props) => {
     <div className="forecast">
       <h1 className="forecast-title">Seven Hour</h1>
       <ul className="forecast-list">
-        {/* {
+        {
           hourly.map((hour, index) =>
             <ForecastCard
               key={index}
-              hour={hour}/>
+              forecast={hour}/>
           )
-        } */}
+        }
       </ul>
     </div>
   );

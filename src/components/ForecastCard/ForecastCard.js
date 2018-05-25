@@ -10,8 +10,8 @@ const ForecastCard = (props) => {
       <img src={iconUrl} alt={iconTitle}/>
       <p className="forecast-conditions">{conditions}</p>
       <div className="high-low">
-        <p>{high} &uarr;</p>
-        <p>{low} &darr;</p>
+        <p>{high || ''} &uarr;</p>
+        <p>{low || ''} &darr;</p>
       </div>
     </li>
   );
