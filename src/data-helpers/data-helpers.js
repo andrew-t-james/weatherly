@@ -35,12 +35,10 @@ export const hourlyForecast = (weatherData) => {
 
   return originalHourlyForecast.map(hour => {
     return {
-      day: Number(hour.FCTTIME.hour_padded),
+      hour: Number(hour.FCTTIME.hour_padded),
       conditions: Number(hour.temp.english),
       iconUrl: hour.icon_url,
       iconTitle: hour.icon,
-      high: null,
-      low: null,
     };
   });
 };
