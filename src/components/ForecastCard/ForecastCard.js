@@ -14,7 +14,7 @@ const ForecastCard = (props) => {
       {hour ? <h2 className="forecast-list-item__title">{`${hour}:00`}</h2> :
         <h2 className="forecast-list-item__title">{day}</h2>}
       <img className="forecast-list-item__image" src={iconUrl} alt={iconTitle}/>
-      {typeof conditions === 'number' ? <p className="forecast-conditions">{conditions}&#176;</p>
+      {Number(conditions) ? <p className="forecast-conditions">{conditions}&#176;</p>
         : <p className="forecast-conditions">{conditions}</p>}
       <div className="high-low">
         {high && <p className="forecast-high">&uarr; {high} &#176;</p>}

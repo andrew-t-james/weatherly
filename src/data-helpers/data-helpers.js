@@ -1,3 +1,11 @@
+import fetch from 'isomorphic-fetch';
+import { API_KEY } from '../API_KEY.js';
+
+export const baseUrl = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/CO/Denver.json`;
+
+export const apiFetch = () => fetch(baseUrl)
+  .then(response => response.json());
+
 export const locationForecast = (weatherData) =>{
   const location = {
     city: weatherData.current_observation.display_location.city,

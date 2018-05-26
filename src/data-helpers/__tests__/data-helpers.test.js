@@ -1,5 +1,5 @@
 import { data } from '../../mock-data/mock-data';
-import { dailyForecast, hourlyForecast, locationForecast } from '../data-helpers.js';
+import { dailyForecast, hourlyForecast, locationForecast, apiFetch, baseUrl } from '../data-helpers.js';
 
 describe('Helper functions unit tests', () => {
   test('returns weather for current location', () => {
