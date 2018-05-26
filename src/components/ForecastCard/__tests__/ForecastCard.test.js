@@ -24,7 +24,7 @@ describe('ForecastCard Unit tests', () => {
 
   test('it should render one hour forecast data', () => {
     const card = shallow(<ForecastCard forecast={oneHour}/>);
-    const expectedTitle = '12:00';
+    const expectedTitle = '12';
     const actualTitle = card.find('.forecast-list-item__title').text();
 
     const expectedImage = 1;

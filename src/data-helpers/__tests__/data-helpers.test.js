@@ -1,5 +1,5 @@
 import { data } from '../../mock-data/mock-data';
-import { dailyForecast, hourlyForecast, locationForecast } from '../data-helpers.js';
+import { dailyForecast, hourlyForecast, locationForecast, apiFetch, baseUrl } from '../data-helpers.js';
 
 describe('Helper functions unit tests', () => {
   test('returns weather for current location', () => {
@@ -113,59 +113,45 @@ describe('Helper functions unit tests', () => {
     const expected = [
       {
         conditions: 47,
-        day: 12,
-        high: null,
-        iconTitle: "partlycloudy",
-        iconUrl: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
-        low: null
+        hour: 12,
+        iconTitle: 'partlycloudy',
+        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
       },
       {
         conditions: 49,
-        day: 13,
-        high: null,
-        iconTitle: "partlycloudy",
-        iconUrl: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
-        low: null
+        hour: 13,
+        iconTitle: 'partlycloudy',
+        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
       },
       {
         conditions: 49,
-        day: 14,
-        high: null,
-        iconTitle: "partlycloudy",
-        iconUrl: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
-        low: null
+        hour: 14,
+        iconTitle: 'partlycloudy',
+        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
       },
       {
         conditions: 51,
-        day: 15,
-        high: null,
-        iconTitle: "clear",
-        iconUrl: "http://icons.wxug.com/i/c/k/clear.gif",
-        low: null
+        hour: 15,
+        iconTitle: 'clear',
+        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
       },
       {
         conditions: 50,
-        day: 16,
-        high: null,
-        iconTitle: "clear",
-        iconUrl: "http://icons.wxug.com/i/c/k/clear.gif",
-        low: null
+        hour: 16,
+        iconTitle: 'clear',
+        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
       },
       {
         conditions: 48,
-        day: 17,
-        high: null,
-        iconTitle: "clear",
-        iconUrl: "http://icons.wxug.com/i/c/k/clear.gif",
-        low: null
+        hour: 17,
+        iconTitle: 'clear',
+        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
       },
       {
         conditions: 45,
-        day: 18,
-        high: null,
-        iconTitle: "clear",
-        iconUrl: "http://icons.wxug.com/i/c/k/nt_clear.gif",
-        low: null
+        hour: 18,
+        iconTitle: 'clear',
+        iconUrl: 'http://icons.wxug.com/i/c/k/nt_clear.gif'
       }
     ];
 

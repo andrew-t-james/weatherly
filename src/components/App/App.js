@@ -4,7 +4,7 @@ import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 
 import { data } from '../../mock-data/mock-data.js';
-import { locationForecast, dailyForecast, hourlyForecast } from '../../data-helpers/data-helpers.js';
+import { locationForecast, dailyForecast, hourlyForecast, baseUrl, apiFetch } from '../../data-helpers/data-helpers.js';
 
 class App extends Component {
   constructor() {
@@ -34,8 +34,7 @@ class App extends Component {
         tenDayForecast: dailyForecast(data)
       });
     }, 100);
-    // fetch('http://api.wunderground.com/api/b6ad6560d07587c6/forecast/forecast10day/conditions/hourly/q/CO/Denver.json')
-    //   .then(response => response.json())
+    // apiFetch(baseUrl)
     //   .then(response => {
     //     this.setState({
     //       currentLocation: locationForecast(response),

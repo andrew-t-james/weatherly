@@ -1,3 +1,11 @@
+import fetch from 'isomorphic-fetch';
+import { API_KEY } from '../API_KEY.js';
+
+export const baseUrl = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/CO/Denver.json`;
+
+export const apiFetch = () => fetch(baseUrl)
+  .then(response => response.json());
+
 export const locationForecast = (weatherData) =>{
   const location = {
     city: weatherData.current_observation.display_location.city,
@@ -35,12 +43,10 @@ export const hourlyForecast = (weatherData) => {
 
   return originalHourlyForecast.map(hour => {
     return {
-      day: Number(hour.FCTTIME.hour_padded),
+      hour: Number(hour.FCTTIME.hour_padded),
       conditions: Number(hour.temp.english),
       iconUrl: hour.icon_url,
       iconTitle: hour.icon,
-      high: null,
-      low: null,
     };
   });
 };
