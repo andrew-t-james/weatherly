@@ -48,7 +48,7 @@ Your Current Weather component should display the following information
 
 The application should have a 7 hour weather forecast component.
 
-1. Each hour should be a card component and should display
+1. ✅ Each hour should be a card component and should display
 the hour an image that reflects the weather the projected temperature
 
 1. Application should handle when a user searches for a location that is not found by the API. Team should research different ways to handle unfound locations by looking around on different weather and other location searching applications and implement a solution for their project that they find intuitive.
@@ -57,9 +57,9 @@ the hour an image that reflects the weather the projected temperature
 
 The application should have a 10 day forecast component. Each day should be a card component and should display
 
-1. The name of the day
-1. An image that reflects the weather
-1. The projected high and low temperature
+1. ✅ The name of the day
+1. ✅ An image that reflects the weather
+1. ✅ The projected high and low temperature
 
 ## Phase four
 
