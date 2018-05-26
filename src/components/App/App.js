@@ -34,11 +34,12 @@ class App extends Component {
         tenDayForecast: dailyForecast(data)
       });
     }, 100);
-    // fetch('http://api.wunderground.com/api/b6ad6560d07587c6/forecast/forecast10day/conditions/hourly/q/CA/San_Francisco.json')
+    // fetch('http://api.wunderground.com/api/b6ad6560d07587c6/forecast/forecast10day/conditions/hourly/q/CO/Denver.json')
     //   .then(response => response.json())
     //   .then(response => {
     //     this.setState({
     //       currentLocation: locationForecast(response),
+    //       sevenHour: hourlyForecast(response),
     //       tenDayForecast: dailyForecast(response)
     //     });
     //   })

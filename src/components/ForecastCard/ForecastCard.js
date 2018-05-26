@@ -11,13 +11,14 @@ const ForecastCard = (props) => {
 
   return (
     <li className="forecast-list-item">
-      <h2>{typeof day === 'number' ? `${day}:00` : day}</h2>
-      <img src={iconUrl} alt={iconTitle}/>
+      {typeof day === 'number' ? <h2 className="forecast-list-item__title">{`${day}:00`}</h2> :
+        <h2 className="forecast-list-item__title">{day}</h2>}
+      <img className="forecast-list-item__image" src={iconUrl} alt={iconTitle}/>
       {typeof conditions === 'number' ? <p className="forecast-conditions">{conditions}&#176;</p>
         : <p className="forecast-conditions">{conditions}</p>}
       <div className="high-low">
-        {high ? <p>&uarr; {high} &#176;</p> : null}
-        {low ? <p>{low} &#176; &darr;</p> : null}
+        {high ? <p className="forecast-high">&uarr; {high} &#176;</p> : null}
+        {low ? <p className="forecast-low">{low} &#176; &darr;</p> : null}
       </div>
     </li>
   );
