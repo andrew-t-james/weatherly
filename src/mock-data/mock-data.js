@@ -2862,9 +2862,3 @@ export const data = {
     }
   ]
 };
-
-export const dailyForecast = () => {
-  return {
-    tenDayForecast: data.forecast.simpleforecast.forecastday,
-  };
-};

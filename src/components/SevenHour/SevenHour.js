@@ -1,21 +1,18 @@
 import React from 'react';
 import ForecastCard from '../ForecastCard/ForecastCard.js';
 
-import './TenDayForecast.css';
-
-
-const TenDayForecast = (props) => {
-  const { tenDayForecast } = props;
+const SevenHour = (props) => {
+  const { hourly } = props;
 
   return (
     <div className="forecast">
-      <h1 className="forecast-title">Ten Day Forecast</h1>
+      <h1 className="forecast-title">Seven Hour</h1>
       <ul className="forecast-list">
         {
-          tenDayForecast.map((forecast, index) =>
+          hourly.map((hour, index) =>
             <ForecastCard
               key={index}
-              forecast={forecast} />
+              forecast={hour}/>
           )
         }
       </ul>
@@ -23,4 +20,4 @@ const TenDayForecast = (props) => {
   );
 };
 
-export default TenDayForecast;
+export default SevenHour;

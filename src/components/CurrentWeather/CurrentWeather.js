@@ -1,15 +1,21 @@
 import React from 'react';
 
+import './CurrentWeather.css';
+
 const CurrentWeather = (props) => {
-  console.log(props);
+  const { city, icon, iconUrl, temperature, weather, high, low, description } = props.currentWeather;
+
   return (
-    <div>
-      <h2>Current Weather</h2>
-      <h3>{props.currentWeather.display_location.city}</h3>
-      <h3>{props.currentWeather.weather}</h3>
-      <h3>{props.currentWeather.local_time_rfc822}</h3>
-      <h3>{props.currentWeather.temperature_string}</h3>
-      <h3>{props.currentWeather.wind_string}</h3>
+    <div className="current-weather">
+      <h2 className="current-weather__title">{city}</h2>
+      <p className="current-weather__weather">{weather}</p>
+      <p className="current-weather__temperature">{temperature}</p>
+      <img className="current-weather__icon" src={iconUrl} alt={icon}/>
+      <div className="high-low">
+        <p className="current-weather__high">{high} &uarr;</p>
+        <p className="current-weather__low">{low} &darr;</p>
+      </div>
+      <p className="current-weather__description">{description}</p>
     </div>
   );
 };
