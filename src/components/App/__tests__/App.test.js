@@ -56,4 +56,58 @@ describe('App unit tests', () => {
 
     expect(actual).toBe(expected);
   });
+
+
+  test.skip('should have been called with correct', async () => {
+    const expected = [
+      {
+        conditions: 47,
+        hour: 12,
+        iconTitle: 'partlycloudy',
+        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
+      },
+      {
+        conditions: 49,
+        hour: 13,
+        iconTitle: 'partlycloudy',
+        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
+      },
+      {
+        conditions: 49,
+        hour: 14,
+        iconTitle: 'partlycloudy',
+        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
+      },
+      {
+        conditions: 51,
+        hour: 15,
+        iconTitle: 'clear',
+        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
+      },
+      {
+        conditions: 50,
+        hour: 16,
+        iconTitle: 'clear',
+        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
+      },
+      {
+        conditions: 48,
+        hour: 17,
+        iconTitle: 'clear',
+        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
+      },
+      {
+        conditions: 45,
+        hour: 18,
+        iconTitle: 'clear',
+        iconUrl: 'http://icons.wxug.com/i/c/k/nt_clear.gif'
+      }
+    ];
+
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({ status: 200, json: () => Promise.resolve(expected)}) );
+
+    const actual = await apiFetch(baseUrl);
+
+    expect(window.fetch).toHaveBeenCalledWith(baseUrl);
+  });
 });

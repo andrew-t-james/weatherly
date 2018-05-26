@@ -20,7 +20,58 @@ describe('Helper functions unit tests', () => {
     expect(actual).toEqual(expected);
   });
 
-  test('returns daily for 10 days', () => {
+  test('returns hourly forecast for 7 hours', () => {
+    const expected =  [
+      {
+        conditions: 47,
+        hour: 12,
+        iconTitle: 'partlycloudy',
+        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
+      },
+      {
+        conditions: 49,
+        hour: 13,
+        iconTitle: 'partlycloudy',
+        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
+      },
+      {
+        conditions: 49,
+        hour: 14,
+        iconTitle: 'partlycloudy',
+        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
+      },
+      {
+        conditions: 51,
+        hour: 15,
+        iconTitle: 'clear',
+        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
+      },
+      {
+        conditions: 50,
+        hour: 16,
+        iconTitle: 'clear',
+        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
+      },
+      {
+        conditions: 48,
+        hour: 17,
+        iconTitle: 'clear',
+        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
+      },
+      {
+        conditions: 45,
+        hour: 18,
+        iconTitle: 'clear',
+        iconUrl: 'http://icons.wxug.com/i/c/k/nt_clear.gif'
+      }
+    ];
+
+    const actual = hourlyForecast(data);
+
+    expect(actual).toEqual(expected);
+  });
+
+  test('returns daily forecast for 10 days', () => {
     const expected =  [
       {
         conditions: "Partly Cloudy",
@@ -105,57 +156,6 @@ describe('Helper functions unit tests', () => {
     ];
 
     const actual = dailyForecast(data);
-
-    expect(actual).toEqual(expected);
-  });
-
-  test('returns hourly weather', () => {
-    const expected = [
-      {
-        conditions: 47,
-        hour: 12,
-        iconTitle: 'partlycloudy',
-        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
-      },
-      {
-        conditions: 49,
-        hour: 13,
-        iconTitle: 'partlycloudy',
-        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
-      },
-      {
-        conditions: 49,
-        hour: 14,
-        iconTitle: 'partlycloudy',
-        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
-      },
-      {
-        conditions: 51,
-        hour: 15,
-        iconTitle: 'clear',
-        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
-      },
-      {
-        conditions: 50,
-        hour: 16,
-        iconTitle: 'clear',
-        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
-      },
-      {
-        conditions: 48,
-        hour: 17,
-        iconTitle: 'clear',
-        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
-      },
-      {
-        conditions: 45,
-        hour: 18,
-        iconTitle: 'clear',
-        iconUrl: 'http://icons.wxug.com/i/c/k/nt_clear.gif'
-      }
-    ];
-
-    const actual = hourlyForecast(data);
 
     expect(actual).toEqual(expected);
   });
