@@ -28,7 +28,7 @@ describe('Search Unit Test', () => {
   });
 
   test('Form should have have default state value title is an empty string', () => {
-    const expected = null;
+    const expected = '';
     const actual = search.state('location');
 
     expect(actual).toBe(expected);
@@ -79,7 +79,7 @@ describe('Search Unit Test', () => {
       }
     };
 
-    const expected = null;
+    const expected = '';
 
     search.instance().submitLocation(mockEvent);
 

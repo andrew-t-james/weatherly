@@ -4,7 +4,7 @@ class Search extends Component {
   constructor() {
     super();
     this.state = {
-      location: null
+      location: ''
     };
 
     this.updateInput = this.updateInput.bind(this);
@@ -26,7 +26,7 @@ class Search extends Component {
     this.props.updateLocation(location);
 
     this.setState({
-      location: null
+      location: ''
     });
 
     event.target.reset();
