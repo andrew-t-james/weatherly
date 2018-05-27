@@ -35,10 +35,10 @@ class App extends Component {
         tenDayForecast: dailyForecast(mockData)
       });
     }, 100);
-    // this.updateLocation();
+    // this.updateLocation(baseUrl);
   }
 
-  updateLocation(url = baseUrl) {
+  updateLocation(url) {
     fetch(url)
       .then(response => response.json())
       .then(response => {

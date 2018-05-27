@@ -6,6 +6,7 @@ import CurrentWeather from '../../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../../SevenHour/SevenHour.js';
 import { baseUrl } from '../../../data-helpers/data-helpers.js';
 
+
 describe('App unit tests', () => {
   let app;
 
@@ -65,33 +66,8 @@ describe('App unit tests', () => {
     expect(actual).toBe(expected);
   });
 
-  test.skip('it should update state when the updateLocation method is invoked', async () => {
-    const expected = {
-      currentLocation: {
-        city: null,
-        weather: null,
-        icon: null,
-        iconUrl: null,
-        temperature: null,
-        high: null,
-        low: null,
-        description: null
-      },
-      sevenHourForecast: [],
-      tenDayForecast: []
-    };
-
-    await app.instance().updateLocation(baseUrl);
-    const actual = app.instance().state;
-
-    app.update();
-    console.log(app.debug());
-
-    expect(actual).toEqual(expected);
-  });
-
-  describe.skip('API fetch tests', () => {
-    test('should have been called with correct url', async () => {
+  describe('API fetch tests', () => {
+    test.skip('should have been called with correct url', async () => {
 
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.resolve({
@@ -99,9 +75,9 @@ describe('App unit tests', () => {
           json: () => Promise.resolve()
         }));
 
-
       await app.instance().updateLocation(baseUrl);
-      console.log(window.fetch.mock.calls);
+
+      console.log(window.fetch.mock);
 
       expect(window.fetch).toHaveBeenCalledWith(baseUrl);
     });
