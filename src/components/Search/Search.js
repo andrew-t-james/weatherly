@@ -4,17 +4,18 @@ class Search extends Component {
   constructor() {
     super();
     this.state = {
-      location: ''
+      location: null
     };
 
     this.updateInput = this.updateInput.bind(this);
+    this.submitLocation = this.submitLocation.bind(this);
   }
 
   updateInput(event) {
     const { name, value } = event.target;
 
     this.setState({
-      [name]: value,
+      [name]: value
     });
   }
 
@@ -25,13 +26,15 @@ class Search extends Component {
     this.props.updateLocation(location);
 
     this.setState({
-      location: ''
+      location: null
     });
 
     event.target.reset();
   }
 
   render() {
+    const  { location } = this.state;
+
     return (
       <div>
         <h1>Weathrly App</h1>
@@ -39,8 +42,8 @@ class Search extends Component {
           <input
             onChange={event => this.updateInput(event)}
             name="location" type="text"
-            value={this.state.locaiton}/>
-          <button type="submit">Submit</button>
+            value={this.state.location}/>
+          <button type="submit" disabled={!location}>Submit</button>
         </form>
       </div>
     );

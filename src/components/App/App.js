@@ -3,9 +3,9 @@ import Search from '../Search/Search.js';
 import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
+import Error from '../Error/Error.js';
 
 import { API_KEY } from '../../API_KEY.js';
-import { mockData } from '../../mock-data/mock-data.js';
 import { locationForecast, dailyForecast, hourlyForecast } from '../../data-helpers/data-helpers.js';
 
 class App extends Component {
@@ -31,13 +31,13 @@ class App extends Component {
 
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        currentLocation: locationForecast(mockData),
-        sevenHourForecast: hourlyForecast(mockData),
-        tenDayForecast: dailyForecast(mockData)
-      });
-    }, 100);
+    // setTimeout(() => {
+    //   this.setState({
+    //     currentLocation: locationForecast(mockData),
+    //     sevenHourForecast: hourlyForecast(mockData),
+    //     tenDayForecast: dailyForecast(mockData)
+    //   });
+    // }, 100);
     // this.updateLocation(baseUrl);
   }
 

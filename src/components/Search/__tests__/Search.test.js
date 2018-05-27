@@ -15,16 +15,20 @@ describe('Search Unit Test', () => {
     const expectedButton = 'Submit';
     const actualButton = search.find('button').text();
 
+    const disabledButton = true;
+    const actualDisabledButton = search.find('button').is('[disabled]');
+
     const expectedInput = 1;
     const actualInput = search.find('input').length;
 
     expect(actualForm).toBe(expectedForm);
     expect(actualButton).toBe(expectedButton);
+    expect(actualDisabledButton).toBe(disabledButton);
     expect(actualInput).toBe(expectedInput);
   });
 
   test('Form should have have default state value title is an empty string', () => {
-    const expected = '';
+    const expected = null;
     const actual = search.state('location');
 
     expect(actual).toBe(expected);
@@ -47,6 +51,26 @@ describe('Search Unit Test', () => {
     expect(actual).toEqual(expected);
   });
 
+  test('it should enable button when State is updated', () => {
+    const expected = false;
+    const mockEvent = {
+      target: {
+        value: 'Louisville',
+        name: 'location'
+      }
+    };
+
+    search.instance().updateInput(mockEvent);
+
+    search.setState({
+      location: 'Louisville',
+    });
+
+    const actual = search.find('button').html().includes('disabled');
+
+    expect(actual).toEqual(expected);
+  });
+
   test('it should clear state on submit', () => {
     const mockEvent = {
       preventDefault: jest.fn(),
@@ -55,7 +79,7 @@ describe('Search Unit Test', () => {
       }
     };
 
-    const expected = '';
+    const expected = null;
 
     search.instance().submitLocation(mockEvent);
 
