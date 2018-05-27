@@ -3,8 +3,9 @@ import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 
-import { data } from '../../mock-data/mock-data.js';
-import { locationForecast, dailyForecast, hourlyForecast, baseUrl, apiFetch } from '../../data-helpers/data-helpers.js';
+import fetch from 'isomorphic-fetch';
+import { mockData } from '../../mock-data/mock-data.js';
+import { locationForecast, dailyForecast, hourlyForecast, baseUrl } from '../../data-helpers/data-helpers.js';
 
 class App extends Component {
   constructor() {
@@ -29,20 +30,25 @@ class App extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        currentLocation: locationForecast(data),
-        sevenHour: hourlyForecast(data),
-        tenDayForecast: dailyForecast(data)
+        currentLocation: locationForecast(mockData),
+        sevenHour: hourlyForecast(mockData),
+        tenDayForecast: dailyForecast(mockData)
       });
     }, 100);
-    // apiFetch(baseUrl)
-    //   .then(response => {
-    //     this.setState({
-    //       currentLocation: locationForecast(response),
-    //       sevenHour: hourlyForecast(response),
-    //       tenDayForecast: dailyForecast(response)
-    //     });
-    //   })
-    //   .catch(error => console.error(error));
+    // this.updateLocation();
+  }
+
+  updateLocation(url = baseUrl) {
+    fetch(url)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          currentLocation: locationForecast(response),
+          sevenHour: hourlyForecast(response),
+          tenDayForecast: dailyForecast(response)
+        });
+      })
+      .catch(error => console.error(error));
   }
 
   render() {

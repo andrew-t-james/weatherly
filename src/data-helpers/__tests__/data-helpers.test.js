@@ -1,5 +1,5 @@
-import { data } from '../../mock-data/mock-data';
-import { dailyForecast, hourlyForecast, locationForecast, apiFetch, baseUrl } from '../data-helpers.js';
+import { mockData } from '../../mock-data/mock-data';
+import { dailyForecast, hourlyForecast, locationForecast, } from '../data-helpers.js';
 
 describe('Helper functions unit tests', () => {
   test('returns weather for current location', () => {
@@ -15,7 +15,7 @@ describe('Helper functions unit tests', () => {
       weekDay: "Wednesday"
     };
 
-    const actual = locationForecast(data);
+    const actual = locationForecast(mockData);
 
     expect(actual).toEqual(expected);
   });
@@ -66,7 +66,7 @@ describe('Helper functions unit tests', () => {
       }
     ];
 
-    const actual = hourlyForecast(data);
+    const actual = hourlyForecast(mockData);
 
     expect(actual).toEqual(expected);
   });
@@ -155,7 +155,7 @@ describe('Helper functions unit tests', () => {
       }
     ];
 
-    const actual = dailyForecast(data);
+    const actual = dailyForecast(mockData);
 
     expect(actual).toEqual(expected);
   });

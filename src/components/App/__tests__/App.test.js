@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import App from '../App.js';
 import TenDayForecast from '../../TenDayForecast/TenDayForecast.js';
 import CurrentWeather from '../../CurrentWeather/CurrentWeather.js';
-
+import { baseUrl } from '../../../data-helpers/data-helpers.js';
 
 describe('App unit tests', () => {
   let app;
@@ -57,57 +57,45 @@ describe('App unit tests', () => {
     expect(actual).toBe(expected);
   });
 
+  test.only('it should update state when the updateLocation method is invoked', async () => {
+    const expected = {
+      currentLocation: {
+        city: null,
+        weather: null,
+        icon: null,
+        iconUrl: null,
+        temperature: null,
+        high: null,
+        low: null,
+        description: null
+      },
+      sevenHour: [],
+      tenDayForecast: []
+    };
 
-  test.skip('should have been called with correct', async () => {
-    const expected = [
-      {
-        conditions: 47,
-        hour: 12,
-        iconTitle: 'partlycloudy',
-        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
-      },
-      {
-        conditions: 49,
-        hour: 13,
-        iconTitle: 'partlycloudy',
-        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
-      },
-      {
-        conditions: 49,
-        hour: 14,
-        iconTitle: 'partlycloudy',
-        iconUrl: 'http://icons.wxug.com/i/c/k/partlycloudy.gif'
-      },
-      {
-        conditions: 51,
-        hour: 15,
-        iconTitle: 'clear',
-        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
-      },
-      {
-        conditions: 50,
-        hour: 16,
-        iconTitle: 'clear',
-        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
-      },
-      {
-        conditions: 48,
-        hour: 17,
-        iconTitle: 'clear',
-        iconUrl: 'http://icons.wxug.com/i/c/k/clear.gif'
-      },
-      {
-        conditions: 45,
-        hour: 18,
-        iconTitle: 'clear',
-        iconUrl: 'http://icons.wxug.com/i/c/k/nt_clear.gif'
-      }
-    ];
+    await app.instance().updateLocation(baseUrl);
+    const actual = app.instance().state;
 
-    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({ status: 200, json: () => Promise.resolve(expected)}) );
+    app.update();
+    console.log(app.debug());
 
-    const actual = await apiFetch(baseUrl);
+    expect(actual).toEqual(expected);
+  });
 
-    expect(window.fetch).toHaveBeenCalledWith(baseUrl);
+  describe('API fetch tests', () => {
+    test('should have been called with correct url', async () => {
+
+      window.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve()
+        }));
+
+
+      await app.instance().updateLocation(baseUrl);
+      console.log(window.fetch.mock.calls);
+
+      expect(window.fetch).toHaveBeenCalledWith(baseUrl);
+    });
   });
 });
