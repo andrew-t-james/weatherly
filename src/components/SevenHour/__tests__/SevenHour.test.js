@@ -25,7 +25,7 @@ describe('Seven Hour unit tests', () => {
     }
   ];
 
-  beforeEach(() => sevenHour =  shallow(<SevenHour hourly={sevenHourForecast}/>));
+  beforeEach(() => sevenHour =  shallow(<SevenHour hourlyForecast={sevenHourForecast}/>));
 
   test('it should render multiple Cards components', () => {
     const expected = 2;
