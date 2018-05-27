@@ -57,7 +57,7 @@ describe('App unit tests', () => {
     expect(actual).toBe(expected);
   });
 
-  test.only('it should update state when the updateLocation method is invoked', async () => {
+  test('it should update state when the updateLocation method is invoked', async () => {
     const expected = {
       currentLocation: {
         city: null,
@@ -69,7 +69,7 @@ describe('App unit tests', () => {
         low: null,
         description: null
       },
-      sevenHour: [],
+      sevenHourForecast: [],
       tenDayForecast: []
     };
 

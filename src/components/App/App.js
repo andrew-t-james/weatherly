@@ -21,7 +21,7 @@ class App extends Component {
         low: null,
         description: null
       },
-      sevenHour: [],
+      sevenHourForecast: [],
       tenDayForecast: [],
     };
   }
@@ -31,7 +31,7 @@ class App extends Component {
     setTimeout(() => {
       this.setState({
         currentLocation: locationForecast(mockData),
-        sevenHour: hourlyForecast(mockData),
+        sevenHourForecast: hourlyForecast(mockData),
         tenDayForecast: dailyForecast(mockData)
       });
     }, 100);
@@ -44,7 +44,7 @@ class App extends Component {
       .then(response => {
         this.setState({
           currentLocation: locationForecast(response),
-          sevenHour: hourlyForecast(response),
+          sevenHourForecast: hourlyForecast(response),
           tenDayForecast: dailyForecast(response)
         });
       })
@@ -52,7 +52,7 @@ class App extends Component {
   }
 
   render() {
-    const { tenDayForecast, currentLocation, sevenHour } = this.state;
+    const { tenDayForecast, currentLocation, sevenHourForecast } = this.state;
 
     return (
       <div>
@@ -60,7 +60,7 @@ class App extends Component {
         <CurrentWeather
           currentWeather={currentLocation} />
         <SevenHour
-          hourly={sevenHour} />
+          hourlyForecast={sevenHourForecast} />
         <TenDayForecast
           tenDayForecast={tenDayForecast} />
       </div>
