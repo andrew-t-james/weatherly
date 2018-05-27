@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import Search from '../Search/Search.js';
 import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 
-import fetch from 'isomorphic-fetch';
+import { API_KEY } from '../../API_KEY.js';
 import { mockData } from '../../mock-data/mock-data.js';
-import { locationForecast, dailyForecast, hourlyForecast, baseUrl } from '../../data-helpers/data-helpers.js';
+import { locationForecast, dailyForecast, hourlyForecast } from '../../data-helpers/data-helpers.js';
 
 class App extends Component {
   constructor() {
@@ -24,6 +25,8 @@ class App extends Component {
       sevenHourForecast: [],
       tenDayForecast: [],
     };
+
+    this.updateLocation = this.updateLocation.bind(this);
   }
 
 
@@ -38,8 +41,10 @@ class App extends Component {
     // this.updateLocation(baseUrl);
   }
 
-  updateLocation(url) {
-    fetch(url)
+  updateLocation(location) {
+    const baseUrl = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/CO/${location}.json`;
+
+    fetch(baseUrl)
       .then(response => response.json())
       .then(response => {
         this.setState({
@@ -55,15 +60,15 @@ class App extends Component {
     const { tenDayForecast, currentLocation, sevenHourForecast } = this.state;
 
     return (
-      <div>
-        <h1>Weathrly App</h1>
+      <main>
+        <Search updateLocation={this.updateLocation}/>
         <CurrentWeather
           currentWeather={currentLocation} />
         <SevenHour
           hourlyForecast={sevenHourForecast} />
         <TenDayForecast
           tenDayForecast={tenDayForecast} />
-      </div>
+      </main>
     );
   }
 }

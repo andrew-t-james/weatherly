@@ -4,8 +4,7 @@ import App from '../App.js';
 import TenDayForecast from '../../TenDayForecast/TenDayForecast.js';
 import CurrentWeather from '../../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../../SevenHour/SevenHour.js';
-import { baseUrl } from '../../../data-helpers/data-helpers.js';
-
+import { API_KEY } from '../../../API_KEY.js';
 
 describe('App unit tests', () => {
   let app;
@@ -67,7 +66,8 @@ describe('App unit tests', () => {
   });
 
   describe('API fetch tests', () => {
-    test.skip('should have been called with correct url', async () => {
+    test('should have been called with correct url', async () => {
+      const baseUrl = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/CO/Denver.json`;
 
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.resolve({
@@ -75,9 +75,8 @@ describe('App unit tests', () => {
           json: () => Promise.resolve()
         }));
 
-      await app.instance().updateLocation(baseUrl);
-
-      console.log(window.fetch.mock);
+      await app.instance().updateLocation('Denver');
+      // console.log(window.fetch.mock);
 
       expect(window.fetch).toHaveBeenCalledWith(baseUrl);
     });
