@@ -2,11 +2,13 @@ import React from 'react';
 import './ForecastCard.css';
 
 const ForecastCard = (props) => {
-  const { iconUrl, iconTitle, high, low, conditions, hour } = props.forecast;
-  let { day } = props.forecast;
+  const { iconUrl, iconTitle, high, low, conditions, day } = props.forecast;
+  let { hour } = props.forecast;
 
-  if (day > 12) {
-    day = day - 12;
+  if (hour > 12) {
+    hour = hour - 12;
+  } else if (hour < 1) {
+    hour = '00';
   }
 
   return (

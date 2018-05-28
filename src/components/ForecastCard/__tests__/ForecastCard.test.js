@@ -5,11 +5,9 @@ import ForecastCard from '../ForecastCard.js';
 describe('ForecastCard Unit tests', () => {
   const oneHour = {
     conditions: 47,
-    day: 12,
-    high: null,
+    hour: 12,
     iconTitle: "partlycloudy",
     iconUrl: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
-    low: null
   };
 
   const oneDayForecast = {
@@ -24,7 +22,7 @@ describe('ForecastCard Unit tests', () => {
 
   test('it should render one hour forecast data', () => {
     const card = shallow(<ForecastCard forecast={oneHour}/>);
-    const expectedTitle = '12';
+    const expectedTitle = '12:00';
     const actualTitle = card.find('.forecast-list-item__title').text();
 
     const expectedImage = 1;
@@ -64,5 +62,22 @@ describe('ForecastCard Unit tests', () => {
     expect(actualConditions).toBe(expectedConditions);
     expect(actualHigh).toBe(expectedHigh);
     expect(actualLow).toBe(expectedLow);
+  });
+
+  test('it should render correct time if time is midnight', () => {
+    const midnight = {
+      conditions: 47,
+      hour: 0,
+      high: null,
+      iconTitle: "partlycloudy",
+      iconUrl: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+      low: null
+    };
+
+    const card = shallow(<ForecastCard forecast={midnight}/>);
+    const expectedTitle = '00:00';
+    const actualTitle = card.find('.forecast-list-item__title').text();
+
+    expect(actualTitle).toBe(expectedTitle);
   });
 });
