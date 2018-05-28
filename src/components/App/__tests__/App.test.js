@@ -1,11 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from '../App.js';
+import Search from '../../Search/Search.js';
 import TenDayForecast from '../../TenDayForecast/TenDayForecast.js';
 import CurrentWeather from '../../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../../SevenHour/SevenHour.js';
 import { API_KEY } from '../../../API_KEY.js';
-
+import mockJSON from '../../../mock-data/mock-data.json';
 
 describe('App unit tests', () => {
   let app;
@@ -29,6 +30,14 @@ describe('App unit tests', () => {
     expect(actual).toEqual(expected);
   });
 
+  test('It should have a default state of [] for sevenHourForecast', () => {
+    const expected = [];
+
+    const actual = app.state('sevenHourForecast');
+
+    expect(actual).toEqual(expected);
+  });
+
   test('It should have a default state of [] for tenDayForecast', () => {
     const expected = [];
 
@@ -37,12 +46,11 @@ describe('App unit tests', () => {
     expect(actual).toEqual(expected);
   });
 
-  test('It should have a default state of [] for tenDayForecast', () => {
-    const expected = [];
+  test('App should render a single TenDayForecast component', () => {
+    const expected = 1;
+    const actual = app.find(Search).length;
 
-    const actual = app.state('sevenHourForecast');
-
-    expect(actual).toEqual(expected);
+    expect(actual).toBe(expected);
   });
 
   test('App should render a single CurrentWeather component', () => {
@@ -66,20 +74,19 @@ describe('App unit tests', () => {
     expect(actual).toBe(expected);
   });
 
-  describe('API fetch tests', () => {
-    test.skip('should have been called with correct url', async () => {
-      const baseUrl = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/CO/Denver.json`;
+  describe('API Unit tests', () => {
+    test('should have been called with correct url', async () => {
+      const apiEndPoint = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/KY/Louisville.json`;
 
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.resolve({
           status: 200,
-          json: () => Promise.resolve()
+          json: () => Promise.resolve(mockJSON)
         }));
 
-      await app.instance().updateLocation('Denver');
-      // console.log(window.fetch.mock);
+      await app.instance().updateLocation('Louisville');
 
-      expect(window.fetch).toHaveBeenCalledWith(baseUrl);
+      expect(window.fetch).toHaveBeenCalledWith(apiEndPoint);
     });
   });
 });

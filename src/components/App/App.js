@@ -42,9 +42,9 @@ class App extends Component {
   }
 
   updateLocation(location) {
-    const baseUrl = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/CO/${location}.json`;
+    const apiEndPoint = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/KY/${location}.json`;
 
-    fetch(baseUrl)
+    fetch(apiEndPoint)
       .then(response => response.json())
       .then(response => {
         this.setState({
@@ -53,7 +53,9 @@ class App extends Component {
           tenDayForecast: dailyForecast(response)
         });
       })
-      .catch(error => console.error(error));
+      .catch(error => {
+        console.error(error);
+      });
   }
 
   render() {
@@ -61,7 +63,8 @@ class App extends Component {
 
     return (
       <main>
-        <Search updateLocation={this.updateLocation}/>
+        <Search
+          updateLocation={this.updateLocation} />
         <CurrentWeather
           currentWeather={currentLocation} />
         <SevenHour
