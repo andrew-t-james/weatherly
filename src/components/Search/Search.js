@@ -42,8 +42,8 @@ class Search extends Component {
           <input
             onChange={event => this.updateInput(event)}
             name="location" type="text"
-            value={this.state.location}/>
-          <button type="submit" disabled={!location}>Submit</button>
+            value={location}/>
+          <button type="submit" disabled={!location.trim(' ')}>Submit</button>
         </form>
       </div>
     );

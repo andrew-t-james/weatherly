@@ -71,6 +71,26 @@ describe('Search Unit Test', () => {
     expect(actual).toEqual(expected);
   });
 
+  test('it should enable button when State is updated with valid input', () => {
+    const expected = true;
+    const mockEvent = {
+      target: {
+        value: '   ',
+        name: 'location'
+      }
+    };
+
+    search.instance().updateInput(mockEvent);
+
+    search.setState({
+      location: '   ',
+    });
+
+    const actual = search.find('button').html().includes('disabled');
+
+    expect(actual).toEqual(expected);
+  });
+
   test('it should clear state on submit', () => {
     const mockEvent = {
       preventDefault: jest.fn(),
