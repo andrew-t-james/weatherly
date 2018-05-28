@@ -3,7 +3,7 @@ import Search from '../Search/Search.js';
 import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
-import ErrorModal from '../ErrorModal/ErrorModal.js';
+import Modal from '../Modal/Modal.js';
 
 import { API_KEY } from '../../API_KEY.js';
 import { locationForecast, dailyForecast, hourlyForecast } from '../../data-helpers/data-helpers.js';
@@ -64,7 +64,7 @@ class App extends Component {
     const { tenDayForecast, currentLocation, sevenHourForecast, hasError } = this.state;
 
     if (hasError) {
-      return <ErrorModal />;
+      return <Modal />;
     }
 
     return (
