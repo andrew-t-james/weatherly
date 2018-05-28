@@ -30,7 +30,7 @@ describe('Current Weather unit tests', () => {
     const expectedTemperature = '46';
     const actualTemperature = currentWeather.find('.current-weather__temperature').text();
 
-    const expectedHigh = '51 ↑';
+    const expectedHigh = '↑ 51';
     const actualHigh = currentWeather.find('.current-weather__high').text();
 
     const expectedLow = '32 ↓';

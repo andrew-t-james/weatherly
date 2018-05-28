@@ -12,10 +12,10 @@ const CurrentWeather = (props) => {
       <p className="current-weather__temperature">{temperature}</p>
       <img className="current-weather__icon" src={iconUrl} alt={icon}/>
       <div className="high-low">
-        <p className="current-weather__high">{high} &uarr;</p>
-        <p className="current-weather__low">{low} &darr;</p>
+        {high && <p className="current-weather__high">&uarr; {high}</p>}
+        {low && <p className="current-weather__low">{low} &darr;</p>}
       </div>
-      <p className="current-weather__description">{description}</p>
+      {description && <p className="current-weather__description">{description}</p>}
     </div>
   );
 };

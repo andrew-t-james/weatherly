@@ -33,13 +33,13 @@ class App extends Component {
 
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        currentLocation: locationForecast(mockJSONResponse),
-        sevenHourForecast: hourlyForecast(mockJSONResponse),
-        tenDayForecast: dailyForecast(mockJSONResponse)
-      });
-    }, 100);
+    // setTimeout(() => {
+    //   this.setState({
+    //     currentLocation: locationForecast(mockJSONResponse),
+    //     sevenHourForecast: hourlyForecast(mockJSONResponse),
+    //     tenDayForecast: dailyForecast(mockJSONResponse)
+    //   });
+    // }, 100);
     // this.updateLocation('Louisville');
   }
 

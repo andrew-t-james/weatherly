@@ -5,7 +5,7 @@ import Search from '../../Search/Search.js';
 import TenDayForecast from '../../TenDayForecast/TenDayForecast.js';
 import CurrentWeather from '../../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../../SevenHour/SevenHour.js';
-import ErrorModal from '../../ErrorModal/ErrorModal.js';
+import Modal from '../../Modal/Modal.js';
 import { API_KEY } from '../../../API_KEY.js';
 import mockJSON from '../../../mock-data/mock-data.json';
 
@@ -83,14 +83,14 @@ describe('App unit tests', () => {
     expect(actual).toBe(expected);
   });
 
-  test('should display an errorModal if hasError is true', async () => {
+  test('should display an Modal if hasError is true', async () => {
     const expected = 1;
 
     app.setState({
       hasError: true
     });
 
-    const actual = app.find(ErrorModal).length;
+    const actual = app.find(Modal).length;
 
     expect(actual).toBe(expected);
   });
