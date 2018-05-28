@@ -47,6 +47,14 @@ describe('App unit tests', () => {
     expect(actual).toEqual(expected);
   });
 
+  test('It should have a default state of [] for tenDayForecast', () => {
+    const expected = false;
+
+    const actual = app.state('hasError');
+
+    expect(actual).toEqual(expected);
+  });
+
   test('App should render a single TenDayForecast component', () => {
     const expected = 1;
     const actual = app.find(Search).length;
