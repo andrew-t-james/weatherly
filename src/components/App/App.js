@@ -64,7 +64,6 @@ class App extends Component {
     const { tenDayForecast, currentLocation, sevenHourForecast, hasError } = this.state;
 
     if (hasError) {
-      // You can render any custom fallback UI
       return <ErrorModal />;
     }
 
