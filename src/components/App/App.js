@@ -3,10 +3,11 @@ import Search from '../Search/Search.js';
 import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
-import Error from '../Error/Error.js';
+import ErrorModal from '../ErrorModal/ErrorModal.js';
 
 import { API_KEY } from '../../API_KEY.js';
 import { locationForecast, dailyForecast, hourlyForecast } from '../../data-helpers/data-helpers.js';
+import mockJSONResponse from '../../mock-data/mock-data.json';
 
 class App extends Component {
   constructor() {
@@ -24,6 +25,7 @@ class App extends Component {
       },
       sevenHourForecast: [],
       tenDayForecast: [],
+      hasError: false
     };
 
     this.updateLocation = this.updateLocation.bind(this);
@@ -31,14 +33,14 @@ class App extends Component {
 
 
   componentDidMount() {
-    // setTimeout(() => {
-    //   this.setState({
-    //     currentLocation: locationForecast(mockData),
-    //     sevenHourForecast: hourlyForecast(mockData),
-    //     tenDayForecast: dailyForecast(mockData)
-    //   });
-    // }, 100);
-    // this.updateLocation(baseUrl);
+    setTimeout(() => {
+      this.setState({
+        currentLocation: locationForecast(mockJSONResponse),
+        sevenHourForecast: hourlyForecast(mockJSONResponse),
+        tenDayForecast: dailyForecast(mockJSONResponse)
+      });
+    }, 100);
+    // this.updateLocation('Louisville');
   }
 
   updateLocation(location) {
@@ -54,12 +56,17 @@ class App extends Component {
         });
       })
       .catch(error => {
-        console.error(error);
+        this.setState({ hasError: true });
       });
   }
 
   render() {
-    const { tenDayForecast, currentLocation, sevenHourForecast } = this.state;
+    const { tenDayForecast, currentLocation, sevenHourForecast, hasError } = this.state;
+
+    if (hasError) {
+      // You can render any custom fallback UI
+      return <ErrorModal />;
+    }
 
     return (
       <main>
