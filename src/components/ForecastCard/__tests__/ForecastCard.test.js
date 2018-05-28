@@ -19,7 +19,6 @@ describe('ForecastCard Unit tests', () => {
     low: "32"
   };
 
-
   test('it should render one hour forecast data', () => {
     const card = shallow(<ForecastCard forecast={oneHour}/>);
     const expectedTitle = '12:00';
