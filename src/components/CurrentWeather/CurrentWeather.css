@@ -2,5 +2,29 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  height: 30rem;
+  justify-content: center;;
+}
+
+.current-weather__title {
+  font-size: 2.8rem;
+}
+
+.current-weather__weather,
+.current-weather__temperature,
+.current-weather__description {
+  font-size: 2rem;
+}
+
+.current-weather__icon {
+  height: 8rem;
+}
+
+.current-weather-high-low {
+  border: 1px solid green;
+  display: flex;
+  font-size: 1.8rem;
+  justify-content: space-between;
+  padding: 0 20rem;
+  width: 100%;
 }

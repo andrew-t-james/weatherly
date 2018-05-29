@@ -8,6 +8,7 @@ import CurrentWeather from '../../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../../SevenHour/SevenHour.js';
 import Modal from '../../Modal/Modal.js';
 import { API_KEY } from '../../../API_KEY.js';
+import { locationForecast, hourlyForecast, dailyForecast } from '../../../data-helpers/data-helpers.js';
 import mockJSON from '../../../mock-data/mock-data.json';
 
 describe('App unit tests', () => {
@@ -115,7 +116,7 @@ describe('App unit tests', () => {
         }));
 
       await app.instance().updateLocation('Louisville');
-
+      expect(window.fetch).toHaveBeenCalledTimes(1);
       expect(window.fetch).toHaveBeenCalledWith(apiEndPoint);
     });
   });

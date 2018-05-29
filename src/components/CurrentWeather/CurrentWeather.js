@@ -6,17 +6,17 @@ const CurrentWeather = (props) => {
   const { city, icon, iconUrl, temperature, weather, high, low, description } = props.currentWeather;
 
   return (
-    <div className="current-weather">
+    <section className="current-weather">
       <h2 className="current-weather__title">{city}</h2>
       <p className="current-weather__weather">{weather}</p>
       <p className="current-weather__temperature">{temperature}</p>
       <img className="current-weather__icon" src={iconUrl} alt={icon}/>
-      <div className="high-low">
-        {high && <p className="current-weather__high">&uarr; {high}</p>}
-        {low && <p className="current-weather__low">{low} &darr;</p>}
+      <div className="current-weather-high-low">
+        {high && <p className="current-weather__high">{high}&#176; &uarr; High </p>}
+        {low && <p className="current-weather__low">{low}&#176; &darr; Low</p>}
       </div>
       {description && <p className="current-weather__description">{description}</p>}
-    </div>
+    </section>
   );
 };
 

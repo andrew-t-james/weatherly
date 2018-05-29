@@ -20,7 +20,7 @@ describe('Current Weather unit tests', () => {
 
   beforeEach(() => currentWeather = shallow(<CurrentWeather currentWeather={currentLocation}/>));
 
-  test('It should have a correct title', () => {
+  test('It should display data correctly', () => {
     const expectedTitle = 'Louisville';
     const actualTitle = currentWeather.find('h2').text();
 
@@ -30,10 +30,10 @@ describe('Current Weather unit tests', () => {
     const expectedTemperature = '46';
     const actualTemperature = currentWeather.find('.current-weather__temperature').text();
 
-    const expectedHigh = '↑ 51';
+    const expectedHigh = '51° ↑ High ';
     const actualHigh = currentWeather.find('.current-weather__high').text();
 
-    const expectedLow = '32 ↓';
+    const expectedLow = '32° ↓ Low';
     const actualLow = currentWeather.find('.current-weather__low').text();
 
     const expectedDescription = 'Sun and clouds mixed. High 51F. Winds NE at 10 to 15 mph.';

@@ -12,7 +12,7 @@ describe('Search Unit Test', () => {
     const expectedForm = 1;
     const actualForm = search.find('form').length;
 
-    const expectedButton = 'Submit';
+    const expectedButton = 'Search';
     const actualButton = search.find('button').text();
 
     const disabledButton = true;
@@ -118,12 +118,12 @@ describe('Search Unit Test', () => {
       }
     };
 
+
     search.setState({
       location: 'Louisville'
     });
 
     search.instance().submitLocation(mockEvent);
-
     expect(mockFn).toHaveBeenCalledWith(expected);
   });
 });

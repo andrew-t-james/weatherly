@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Search.css';
 
 class Search extends Component {
   constructor() {
@@ -36,14 +37,23 @@ class Search extends Component {
     const  { location } = this.state;
 
     return (
-      <header>
-        <h1>Weathrly App</h1>
-        <form onSubmit={event => this.submitLocation(event)}>
+      <header className="header">
+        <h1>Weathrly</h1>
+        <form
+          className="search-form"
+          onSubmit={event => this.submitLocation(event)}>
           <input
+            className="search-form__input"
             onChange={event => this.updateInput(event)}
-            name="location" type="text"
+            name="location"
+            type="text"
             value={location}/>
-          <button type="submit" disabled={!location.trim(' ')}>Submit</button>
+          <button
+            className="search-form__button"
+            type="submit"
+            disabled={!location.trim(' ')}>
+            Search
+          </button>
         </form>
       </header>
     );

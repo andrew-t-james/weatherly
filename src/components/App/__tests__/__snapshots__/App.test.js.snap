@@ -1,29 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App unit tests it should match snapshot 1`] = `
-<main>
-  <header>
+<main
+  className="container"
+>
+  <header
+    className="header"
+  >
     <h1>
-      Weathrly App
+      Weathrly
     </h1>
     <form
+      className="search-form"
       onSubmit={[Function]}
     >
       <input
+        className="search-form__input"
         name="location"
         onChange={[Function]}
         type="text"
         value=""
       />
       <button
+        className="search-form__button"
         disabled={true}
         type="submit"
       >
-        Submit
+        Search
       </button>
     </form>
   </header>
-  <div
+  <section
     className="current-weather"
   >
     <h2
@@ -41,9 +48,9 @@ exports[`App unit tests it should match snapshot 1`] = `
       src={null}
     />
     <div
-      className="high-low"
+      className="current-weather-high-low"
     />
-  </div>
+  </section>
   <section
     className="forecast"
   >
