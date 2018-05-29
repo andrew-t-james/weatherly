@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import CurrentWeather from '../CurrentWeather.js';
 
 
@@ -45,5 +46,13 @@ describe('Current Weather unit tests', () => {
     expect(actualHigh).toBe(expectedHigh);
     expect(actualLow).toBe(expectedLow);
     expect(actualDescription).toBe(expectedDescription);
+  });
+
+  test('it should match snapshot', () => {
+    const currWeather = renderer
+      .create(<CurrentWeather currentWeather={currentLocation} />)
+      .toJSON();
+
+    expect(currWeather).toMatchSnapshot();
   });
 });

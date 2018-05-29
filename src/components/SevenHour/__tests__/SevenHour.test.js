@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import SevenHour from '../SevenHour.js';
 import ForecastCard from '../../ForecastCard/ForecastCard.js';
 
@@ -25,12 +26,20 @@ describe('Seven Hour unit tests', () => {
     }
   ];
 
-  beforeEach(() => sevenHour =  shallow(<SevenHour hourlyForecast={sevenHourForecast}/>));
+  beforeEach(() => sevenHour =  shallow(<SevenHour hourlyForecast={sevenHourForecast} />));
 
   test('it should render multiple Cards components', () => {
     const expected = 2;
     const actual = sevenHour.find(ForecastCard).length;
 
     expect(actual).toEqual(expected);
+  });
+
+  test('it should match snapshot', () => {
+    const sevenHour = renderer
+      .create(<SevenHour hourlyForecast={sevenHourForecast} />)
+      .toJSON();
+
+    expect(sevenHour).toMatchSnapshot();
   });
 });

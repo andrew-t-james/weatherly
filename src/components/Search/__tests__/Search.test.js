@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import Search from '../Search.js';
 
 describe('Search Unit Test', () => {
@@ -125,5 +126,13 @@ describe('Search Unit Test', () => {
 
     search.instance().submitLocation(mockEvent);
     expect(mockFn).toHaveBeenCalledWith(expected);
+  });
+
+  test('it should match snapshot', () => {
+    const search = renderer
+      .create(<Search updateLocation={mockFn} />)
+      .toJSON();
+
+    expect(search).toMatchSnapshot();
   });
 });

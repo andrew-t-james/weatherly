@@ -43,8 +43,8 @@ class App extends Component {
     // this.updateLocation('Louisville');
   }
 
-  updateLocation(location) {
-    const apiEndPoint = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/KY/${location}.json`;
+  updateLocation(city) {
+    const apiEndPoint = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/KY/${city}.json`;
 
     fetch(apiEndPoint)
       .then(response => response.json())
@@ -55,7 +55,7 @@ class App extends Component {
           tenDayForecast: dailyForecast(response)
         });
       })
-      .catch(error => {
+      .catch(() => {
         this.setState({ hasError: true });
       });
   }

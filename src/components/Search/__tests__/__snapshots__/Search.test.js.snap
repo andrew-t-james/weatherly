@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Unit Test it should match snapshot 1`] = `
+<header
+  className="header"
+>
+  <h1>
+    Weathrly
+  </h1>
+  <form
+    className="search-form"
+    onSubmit={[Function]}
+  >
+    <input
+      className="search-form__input"
+      name="location"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button
+      className="search-form__button"
+      disabled={true}
+      type="submit"
+    >
+      Search
+    </button>
+  </form>
+</header>
+`;

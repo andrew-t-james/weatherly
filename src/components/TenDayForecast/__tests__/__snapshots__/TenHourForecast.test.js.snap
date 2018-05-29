@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Forecast Card it should match snapshot 1`] = `
+<section
+  className="forecast"
+>
+  <h1
+    className="forecast-title"
+  >
+    Ten Day Forecast
+  </h1>
+  <ul
+    className="forecast-list"
+  >
+    <li
+      className="forecast-list-item"
+    >
+      <h2
+        className="forecast-list-item__title"
+      >
+        12
+      </h2>
+      <img
+        alt="partlycloudy"
+        className="forecast-list-item__image"
+        src="http://icons.wxug.com/i/c/k/partlycloudy.gif"
+      />
+      <p
+        className="forecast-conditions"
+      >
+        47
+        °
+      </p>
+      <div
+        className="high-low"
+      />
+    </li>
+    <li
+      className="forecast-list-item"
+    >
+      <h2
+        className="forecast-list-item__title"
+      >
+        13
+      </h2>
+      <img
+        alt="partlycloudy"
+        className="forecast-list-item__image"
+        src="http://icons.wxug.com/i/c/k/partlycloudy.gif"
+      />
+      <p
+        className="forecast-conditions"
+      >
+        49
+        °
+      </p>
+      <div
+        className="high-low"
+      />
+    </li>
+  </ul>
+</section>
+`;
