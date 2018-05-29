@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import ForecastCard from '../ForecastCard.js';
 
 describe('ForecastCard Unit tests', () => {
@@ -78,5 +79,21 @@ describe('ForecastCard Unit tests', () => {
     const actualTitle = card.find('.forecast-list-item__title').text();
 
     expect(actualTitle).toBe(expectedTitle);
+  });
+
+  test('it should match snapshot with hour forecast', () => {
+    const card = renderer
+      .create(<ForecastCard forecast={oneHour} />)
+      .toJSON();
+
+    expect(card).toMatchSnapshot();
+  });
+
+  test('it should match snapshot with daily forecast', () => {
+    const card = renderer
+      .create(<ForecastCard forecast={oneDayForecast} />)
+      .toJSON();
+
+    expect(card).toMatchSnapshot();
   });
 });

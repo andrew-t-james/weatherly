@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForecastCard Unit tests it should match snapshot with daily forecast 1`] = `
+<li
+  className="forecast-list-item"
+>
+  <h2
+    className="forecast-list-item__title"
+  >
+    Wednesday
+  </h2>
+  <img
+    alt="partlycloudy"
+    className="forecast-list-item__image"
+    src="http://icons.wxug.com/i/c/k/partlycloudy.gif"
+  />
+  <p
+    className="forecast-conditions"
+  >
+    Partly Cloudy
+  </p>
+  <div
+    className="high-low"
+  >
+    <p
+      className="forecast-high"
+    >
+      ↑ 
+      51
+       °
+    </p>
+    <p
+      className="forecast-low"
+    >
+      32
+       ° ↓
+    </p>
+  </div>
+</li>
+`;
+
+exports[`ForecastCard Unit tests it should match snapshot with hour forecast 1`] = `
+<li
+  className="forecast-list-item"
+>
+  <h2
+    className="forecast-list-item__title"
+  >
+    12:00
+  </h2>
+  <img
+    alt="partlycloudy"
+    className="forecast-list-item__image"
+    src="http://icons.wxug.com/i/c/k/partlycloudy.gif"
+  />
+  <p
+    className="forecast-conditions"
+  >
+    47
+    °
+  </p>
+  <div
+    className="high-low"
+  />
+</li>
+`;

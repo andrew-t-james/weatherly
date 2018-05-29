@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import App from '../App.js';
 import Search from '../../Search/Search.js';
 import TenDayForecast from '../../TenDayForecast/TenDayForecast.js';
@@ -93,6 +94,14 @@ describe('App unit tests', () => {
     const actual = app.find(Modal).length;
 
     expect(actual).toBe(expected);
+  });
+
+  test('it should match snapshot', () => {
+    const app = renderer
+      .create(<App />)
+      .toJSON();
+
+    expect(app).toMatchSnapshot();
   });
 
   describe('API Unit tests', () => {

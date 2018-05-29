@@ -5,7 +5,7 @@ const SevenHour = (props) => {
   const { hourlyForecast } = props;
 
   return (
-    <div className="forecast">
+    <section className="forecast">
       <h1 className="forecast-title">Seven Hour</h1>
       <ul className="forecast-list">
         {
@@ -16,7 +16,7 @@ const SevenHour = (props) => {
           )
         }
       </ul>
-    </div>
+    </section>
   );
 };
 

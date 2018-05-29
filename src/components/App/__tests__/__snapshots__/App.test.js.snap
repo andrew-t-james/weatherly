@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App unit tests it should match snapshot 1`] = `
+<main>
+  <header>
+    <h1>
+      Weathrly App
+    </h1>
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        name="location"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <button
+        disabled={true}
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </header>
+  <div
+    className="current-weather"
+  >
+    <h2
+      className="current-weather__title"
+    />
+    <p
+      className="current-weather__weather"
+    />
+    <p
+      className="current-weather__temperature"
+    />
+    <img
+      alt={null}
+      className="current-weather__icon"
+      src={null}
+    />
+    <div
+      className="high-low"
+    />
+  </div>
+  <section
+    className="forecast"
+  >
+    <h1
+      className="forecast-title"
+    >
+      Seven Hour
+    </h1>
+    <ul
+      className="forecast-list"
+    />
+  </section>
+  <section
+    className="forecast"
+  >
+    <h1
+      className="forecast-title"
+    >
+      Ten Day Forecast
+    </h1>
+    <ul
+      className="forecast-list"
+    />
+  </section>
+</main>
+`;

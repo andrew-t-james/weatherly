@@ -36,7 +36,7 @@ class Search extends Component {
     const  { location } = this.state;
 
     return (
-      <div>
+      <header>
         <h1>Weathrly App</h1>
         <form onSubmit={event => this.submitLocation(event)}>
           <input
@@ -45,7 +45,7 @@ class Search extends Component {
             value={location}/>
           <button type="submit" disabled={!location.trim(' ')}>Submit</button>
         </form>
-      </div>
+      </header>
     );
   }
 }
