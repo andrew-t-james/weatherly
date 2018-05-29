@@ -8,7 +8,6 @@ import CurrentWeather from '../../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../../SevenHour/SevenHour.js';
 import Modal from '../../Modal/Modal.js';
 import { API_KEY } from '../../../API_KEY.js';
-import { locationForecast, hourlyForecast, dailyForecast } from '../../../data-helpers/data-helpers.js';
 import mockJSON from '../../../mock-data/mock-data.json';
 
 describe('App unit tests', () => {
@@ -18,68 +17,78 @@ describe('App unit tests', () => {
 
   test('It should have a default values of null for currentLocations values', () => {
     const expected = {
-      city: null,
-      weather: null,
-      icon: null,
-      iconUrl: null,
-      temperature: null,
-      high: null,
-      low: null,
-      description: null
+      currentLocation: {
+        city: null,
+        weather: null,
+        icon: null,
+        iconUrl: null,
+        temperature: null,
+        high: null,
+        low: null,
+        description: null
+      },
+      sevenHourForecast: [],
+      tenDayForecast: [],
+      hasError: false,
+      hasLocation: false,
     };
 
-    const actual = app.state('currentLocation');
+    const actual = app.state();
 
     expect(actual).toEqual(expected);
   });
 
-  test('It should have a default state of [] for sevenHourForecast', () => {
-    const expected = [];
-
-    const actual = app.state('sevenHourForecast');
-
-    expect(actual).toEqual(expected);
-  });
-
-  test('It should have a default state of [] for tenDayForecast', () => {
-    const expected = [];
-
-    const actual = app.state('tenDayForecast');
-
-    expect(actual).toEqual(expected);
-  });
-
-  test('It should have a default value of false in state for hasError', () => {
-    const expected = false;
-
-    const actual = app.state('hasError');
-
-    expect(actual).toEqual(expected);
-  });
-
-  test('App should render a single Search component', () => {
+  test('It should render a welcome Modal if state has no location', () => {
     const expected = 1;
+
+    const actual = app.find(Modal).length;
+
+    expect(actual).toEqual(expected);
+  });
+
+  test('App should render a single Search component when state hasLocation', () => {
+    const expected = 1;
+
+    app.setState({
+      hasLocation: true
+    });
+
     const actual = app.find(Search).length;
 
     expect(actual).toBe(expected);
   });
 
-  test('App should render a single CurrentWeather component', () => {
+  test('App should render a single CurrentWeather component when state hasLocation', () => {
     const expected = 1;
+
+    app.setState({
+      hasLocation: true
+    });
+
     const actual = app.find(CurrentWeather).length;
 
     expect(actual).toBe(expected);
   });
 
-  test('App should render a single SevenHour component', () => {
+  test('App should render a single SevenHour component when state hasLocation', () => {
     const expected = 1;
+
+    app.setState({
+      hasLocation: true
+    });
+
     const actual = app.find(SevenHour).length;
 
     expect(actual).toBe(expected);
   });
 
-  test('App should render a single TenDayForecast component', () => {
+  test('App should render a single TenDayForecast component when state hasLocation', () => {
     const expected = 1;
+
+    app.setState({
+      hasLocation: true
+    });
+
     const actual = app.find(TenDayForecast).length;
 
     expect(actual).toBe(expected);

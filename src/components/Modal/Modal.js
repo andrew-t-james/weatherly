@@ -1,11 +1,17 @@
 import React from 'react';
+import Search from '../Search/Search.js';
 
-const Error = () => {
+const Modal = (props) => {
+  const { updateLocation, hasError, hasLocation } = props;
+
   return (
     <div>
-      <h1>Error</h1>
+      <Search
+        updateLocation={updateLocation} />
+      {!hasLocation && !hasError && <h2>Welcome To Weatherly</h2>}
+      {hasError && <h2>Please Enter a valid City State or Zip</h2> }
     </div>
   );
 };
 
-export default Error;
+export default Modal;

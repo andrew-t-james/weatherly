@@ -25,7 +25,8 @@ class App extends Component {
       },
       sevenHourForecast: [],
       tenDayForecast: [],
-      hasError: false
+      hasError: false,
+      hasLocation: false,
     };
 
     this.updateLocation = this.updateLocation.bind(this);
@@ -52,19 +53,38 @@ class App extends Component {
         this.setState({
           currentLocation: locationForecast(response),
           sevenHourForecast: hourlyForecast(response),
-          tenDayForecast: dailyForecast(response)
+          tenDayForecast: dailyForecast(response),
+          hasError: false
         });
       })
       .catch(() => {
-        this.setState({ hasError: true });
+        this.setState({
+          currentLocation: {
+            city: null,
+            weather: null,
+            icon: null,
+            iconUrl: null,
+            temperature: null,
+            high: null,
+            low: null,
+            description: null
+          },
+          sevenHourForecast: [],
+          tenDayForecast: [],
+          hasLocation: false,
+          hasError: true,
+        });
       });
   }
 
   render() {
-    const { tenDayForecast, currentLocation, sevenHourForecast, hasError } = this.state;
+    const { tenDayForecast, currentLocation, sevenHourForecast, hasError, hasLocation } = this.state;
 
-    if (hasError) {
-      return <Modal />;
+    if (hasError || !hasLocation) {
+      return <Modal
+        hasError={hasError}
+        hasLocation={hasLocation}
+        updateLocation={this.updateLocation}/>;
     }
 
     return (
