@@ -36,6 +36,10 @@ body {
   line-height: 1.6;
   color: var(--color-grey-dark-2);
   /* background-image: linear-gradient( to right bottom, var(--color-grey-light-1), var(--color-grey-dark-2)); */
+  background: #F1F2B5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #135058, #F1F2B5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #135058, #F1F2B5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -43,7 +47,7 @@ body {
 
 .container {
   max-width: 120rem;
-  margin: 8rem auto;
+  margin: 5rem auto;
   background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-dark);
   min-height: 50rem;

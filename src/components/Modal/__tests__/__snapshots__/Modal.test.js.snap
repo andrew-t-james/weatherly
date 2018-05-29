@@ -1,11 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App unit tests it should match snapshot 1`] = `
-<div>
+<div
+  className="container"
+>
   <header
     className="header"
   >
-    <h1>
+    <h1
+      className="header__title"
+    >
       Weathrly
     </h1>
     <form
@@ -16,6 +20,7 @@ exports[`App unit tests it should match snapshot 1`] = `
         className="search-form__input"
         name="location"
         onChange={[Function]}
+        placeholder="Search by City and State or Zip"
         type="text"
         value=""
       />
@@ -28,8 +33,26 @@ exports[`App unit tests it should match snapshot 1`] = `
       </button>
     </form>
   </header>
-  <h2>
-    Welcome To Weatherly
-  </h2>
+  <div
+    className="welcome"
+  >
+    <h2
+      className="welcome__title"
+    >
+      Welcome To Weatherly
+    </h2>
+    <video
+      autoPlay={true}
+      className="welcome__video"
+      loop={true}
+      muted={true}
+      poster="storm-poster.png"
+    >
+      <source
+        src="storm.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
 </div>
 `;

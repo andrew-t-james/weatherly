@@ -23,7 +23,7 @@ describe('ForecastCard Unit tests', () => {
   test('it should render one hour forecast data', () => {
     const card = shallow(<ForecastCard forecast={oneHour}/>);
     const expectedTitle = '12:00';
-    const actualTitle = card.find('.forecast-list-item__title').text();
+    const actualTitle = card.find('.forecast-list-item__hour').text();
 
     const expectedImage = 1;
     const actualImage = card.find('img').length;
@@ -76,7 +76,7 @@ describe('ForecastCard Unit tests', () => {
 
     const card = shallow(<ForecastCard forecast={midnight}/>);
     const expectedTitle = '00:00';
-    const actualTitle = card.find('.forecast-list-item__title').text();
+    const actualTitle = card.find('.forecast-list-item__hour').text();
 
     expect(actualTitle).toBe(expectedTitle);
   });

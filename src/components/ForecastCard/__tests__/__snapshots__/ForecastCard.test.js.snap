@@ -44,7 +44,7 @@ exports[`ForecastCard Unit tests it should match snapshot with hour forecast 1`]
   className="forecast-list-item"
 >
   <h2
-    className="forecast-list-item__title"
+    className="forecast-list-item__hour"
   >
     12:00
   </h2>

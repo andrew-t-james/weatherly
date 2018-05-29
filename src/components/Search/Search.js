@@ -38,12 +38,13 @@ class Search extends Component {
 
     return (
       <header className="header">
-        <h1>Weathrly</h1>
+        <h1 className="header__title">Weathrly</h1>
         <form
           className="search-form"
           onSubmit={event => this.submitLocation(event)}>
           <input
             className="search-form__input"
+            placeholder="Search by City and State or Zip"
             onChange={event => this.updateInput(event)}
             name="location"
             type="text"

@@ -4,7 +4,9 @@ exports[`Search Unit Test it should match snapshot 1`] = `
 <header
   className="header"
 >
-  <h1>
+  <h1
+    className="header__title"
+  >
     Weathrly
   </h1>
   <form
@@ -15,6 +17,7 @@ exports[`Search Unit Test it should match snapshot 1`] = `
       className="search-form__input"
       name="location"
       onChange={[Function]}
+      placeholder="Search by City and State or Zip"
       type="text"
       value=""
     />

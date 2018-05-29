@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import Search from '../Search/Search.js';
+import { API_KEY } from '../../API_KEY.js';
+import { dailyForecast, hourlyForecast, locationForecast } from '../../data-helpers/data-helpers.js';
+import mockJSONResponse from '../../mock-data/mock-data.json';
 import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
+import Modal from '../Modal/Modal.js';
+import Search from '../Search/Search.js';
 import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
-import Modal from '../Modal/Modal.js';
+import './App.css';
 
-import { API_KEY } from '../../API_KEY.js';
-import { locationForecast, dailyForecast, hourlyForecast } from '../../data-helpers/data-helpers.js';
-import mockJSONResponse from '../../mock-data/mock-data.json';
 
 class App extends Component {
   constructor() {
@@ -93,6 +94,7 @@ class App extends Component {
         <Search
           updateLocation={this.updateLocation} />
         <CurrentWeather
+          className="current-weather"
           currentWeather={currentLocation} />
         <SevenHour
           hourlyForecast={sevenHourForecast} />

@@ -4,6 +4,14 @@
   text-align: center;
 }
 
+.forecast-list-item__hour {
+  font-size: 2rem;
+}
+
+.forecast-list-item__title {
+  font-size: 1.5rem;
+}
+
 .forecast-list-item {
   border: 1px solid green;
   flex: 1;

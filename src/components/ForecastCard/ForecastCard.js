@@ -15,7 +15,7 @@ const ForecastCard = (props) => {
     <li className="forecast-list-item">
       {
         hour ?
-          <h2 className="forecast-list-item__title">{`${hour}:00`}</h2> :
+          <h2 className="forecast-list-item__hour">{`${hour}:00`}</h2> :
           <h2 className="forecast-list-item__title">{day}</h2>
       }
       <img className="forecast-list-item__image" src={iconUrl} alt={iconTitle}/>
