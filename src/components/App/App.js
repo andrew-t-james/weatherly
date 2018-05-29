@@ -54,7 +54,8 @@ class App extends Component {
           currentLocation: locationForecast(response),
           sevenHourForecast: hourlyForecast(response),
           tenDayForecast: dailyForecast(response),
-          hasError: false
+          hasError: false,
+          hasLocation: true
         });
       })
       .catch(() => {
