@@ -5,7 +5,7 @@ import Modal from '../Modal.js';
 
 describe('App unit tests', () => {
   test('it should render a welcome message if noLocation present', () => {
-    const expected = 'Welcome To Weatherly';
+    const expected = 'Welcome To Weathrly';
     const modal = shallow(<Modal hasLocation={false} />);
     const actual = modal.find('h2').text();
 

@@ -21,7 +21,7 @@ export const dailyForecast = (weatherData) => {
   return originalForecastArray.map((day) => {
     return {
       day: day.date.weekday,
-      conditions: day.conditions,
+      // conditions: day.conditions,
       iconUrl: day.icon_url,
       iconTitle: day.icon,
       high: day.high.fahrenheit,

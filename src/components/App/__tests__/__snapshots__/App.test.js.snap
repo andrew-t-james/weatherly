@@ -39,7 +39,7 @@ exports[`App unit tests it should match snapshot 1`] = `
     <h2
       className="welcome__title"
     >
-      Welcome To Weatherly
+      Welcome To Weathrly
     </h2>
     <video
       autoPlay={true}

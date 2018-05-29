@@ -12,7 +12,6 @@ describe('ForecastCard Unit tests', () => {
   };
 
   const oneDayForecast = {
-    conditions: "Partly Cloudy",
     day: "Wednesday",
     high: "51",
     iconTitle: "partlycloudy",
@@ -48,9 +47,6 @@ describe('ForecastCard Unit tests', () => {
     const expectedImage = 1;
     const actualImage = card.find('img').length;
 
-    const expectedConditions = 'Partly Cloudy';
-    const actualConditions = card.find('.forecast-conditions').text();
-
     const expectedHigh = '↑ 51 °';
     const actualHigh = card.find('.forecast-high').text();
 
@@ -59,7 +55,6 @@ describe('ForecastCard Unit tests', () => {
 
     expect(actualTitle).toBe(expectedTitle);
     expect(actualImage).toBe(expectedImage);
-    expect(actualConditions).toBe(expectedConditions);
     expect(actualHigh).toBe(expectedHigh);
     expect(actualLow).toBe(expectedLow);
   });
@@ -69,7 +64,6 @@ describe('ForecastCard Unit tests', () => {
       conditions: 47,
       hour: 0,
       high: null,
-      iconTitle: "partlycloudy",
       iconUrl: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
       low: null
     };

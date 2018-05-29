@@ -74,7 +74,6 @@ describe('Helper functions unit tests', () => {
   test('returns daily forecast for 10 days', () => {
     const expected =  [
       {
-        conditions: "Partly Cloudy",
         day: "Wednesday",
         high: "51",
         iconTitle: "partlycloudy",
@@ -82,7 +81,6 @@ describe('Helper functions unit tests', () => {
         low: "32"
       },
       {
-        conditions: "Clear",
         day: "Thursday",
         high: "55",
         iconTitle: "clear",
@@ -90,7 +88,6 @@ describe('Helper functions unit tests', () => {
         low: "51"
       },
       {
-        conditions: "Chance of Rain",
         day: "Friday",
         high: "57",
         iconTitle: "chancerain",
@@ -98,7 +95,6 @@ describe('Helper functions unit tests', () => {
         low: "44"
       },
       {
-        conditions: "Rain",
         day: "Saturday",
         high: "47",
         iconTitle: "rain",
@@ -106,7 +102,6 @@ describe('Helper functions unit tests', () => {
         low: "30"
       },
       {
-        conditions: "Overcast",
         day: "Sunday",
         high: "37",
         iconTitle: "cloudy",
@@ -114,7 +109,6 @@ describe('Helper functions unit tests', () => {
         low: "22"
       },
       {
-        conditions: "Clear",
         day: "Monday",
         high: "35",
         iconTitle: "clear",
@@ -122,7 +116,6 @@ describe('Helper functions unit tests', () => {
         low: "19"
       },
       {
-        conditions: "Partly Cloudy",
         day: "Tuesday",
         high: "32",
         iconTitle: "partlycloudy",
@@ -130,7 +123,6 @@ describe('Helper functions unit tests', () => {
         low: "20"
       },
       {
-        conditions: "Partly Cloudy",
         day: "Wednesday",
         high: "33",
         iconTitle: "partlycloudy",
@@ -138,7 +130,6 @@ describe('Helper functions unit tests', () => {
         low: "26"
       },
       {
-        conditions: "Snow Showers",
         day: "Thursday",
         high: "35",
         iconTitle: "snow",
@@ -146,7 +137,6 @@ describe('Helper functions unit tests', () => {
         low: "23"
       },
       {
-        conditions: "Partly Cloudy",
         day: "Friday",
         high: "31",
         iconTitle: "partlycloudy",

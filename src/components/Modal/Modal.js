@@ -14,7 +14,7 @@ const Modal = (props) => {
       {
         !hasLocation && !hasError &&
           <div className="welcome">
-            <h2 className="welcome__title">Welcome To Weatherly</h2>
+            <h2 className="welcome__title">Welcome To Weathrly</h2>
             <video loop muted autoPlay poster={stormPoster} className="welcome__video">
               <source src={storm} type="video/mp4" />
             </video>
