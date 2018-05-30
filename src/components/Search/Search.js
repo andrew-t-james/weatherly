@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-
 import './Search.css';
 
+// TODO: Add Prefix trie to search component
 
 class Search extends Component {
   constructor() {

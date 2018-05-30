@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ForecastCard.css';
 
 const ForecastCard = (props) => {
@@ -24,6 +25,15 @@ const ForecastCard = (props) => {
       {low &&  <p className="forecast-low">{low} &#176; &darr;</p>}
     </li>
   );
+};
+
+ForecastCard.propTypes = {
+  forecast: PropTypes.object,
+  iconTitle: PropTypes.string,
+  low: PropTypes.string,
+  day: PropTypes.string,
+  conditions: PropTypes.number,
+  hour: PropTypes.number
 };
 
 export default ForecastCard;
