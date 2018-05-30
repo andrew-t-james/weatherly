@@ -18,7 +18,7 @@ const ForecastCard = (props) => {
           <h2 className="forecast-list-item__hour">{`${hour}:00`}</h2> :
           <h2 className="forecast-list-item__title">{day}</h2>
       }
-      <img className="forecast-list-item__image" src={iconUrl} alt={iconTitle}/>
+      <i className={`forecast-list-item__image wi wi-wu-${iconTitle}`}  alt={iconTitle}/>
       {conditions && <p className="forecast-conditions">{conditions}&#176;</p>}
       <div className="high-low">
         {high && <p className="forecast-high">&uarr; {high} &#176;</p>}

@@ -9,7 +9,6 @@ import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 import './App.css';
 
-
 class App extends Component {
   constructor() {
     super();

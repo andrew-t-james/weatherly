@@ -56,3 +56,8 @@ body {
     width: 100%;
   }
 }
+
+/* custom icon font color */
+.wi {
+  color: #88529E;
+}

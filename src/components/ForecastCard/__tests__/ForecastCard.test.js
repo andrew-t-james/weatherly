@@ -25,7 +25,7 @@ describe('ForecastCard Unit tests', () => {
     const actualTitle = card.find('.forecast-list-item__hour').text();
 
     const expectedImage = 1;
-    const actualImage = card.find('img').length;
+    const actualImage = card.find('i').length;
 
     const expectedConditions = '47°';
     const actualConditions = card.find('.forecast-conditions').text();
@@ -45,7 +45,7 @@ describe('ForecastCard Unit tests', () => {
     const actualTitle = card.find('.forecast-list-item__title').text();
 
     const expectedImage = 1;
-    const actualImage = card.find('img').length;
+    const actualImage = card.find('i').length;
 
     const expectedHigh = '↑ 51 °';
     const actualHigh = card.find('.forecast-high').text();

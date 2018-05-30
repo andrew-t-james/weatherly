@@ -20,10 +20,9 @@ exports[`Seven Hour unit tests it should match snapshot 1`] = `
       >
         12
       </h2>
-      <img
+      <i
         alt="partlycloudy"
-        className="forecast-list-item__image"
-        src="http://icons.wxug.com/i/c/k/partlycloudy.gif"
+        className="forecast-list-item__image wi wi-wu-partlycloudy"
       />
       <p
         className="forecast-conditions"
@@ -43,10 +42,9 @@ exports[`Seven Hour unit tests it should match snapshot 1`] = `
       >
         13
       </h2>
-      <img
+      <i
         alt="partlycloudy"
-        className="forecast-list-item__image"
-        src="http://icons.wxug.com/i/c/k/partlycloudy.gif"
+        className="forecast-list-item__image wi wi-wu-partlycloudy"
       />
       <p
         className="forecast-conditions"

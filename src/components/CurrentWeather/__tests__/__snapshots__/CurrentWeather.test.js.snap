@@ -19,10 +19,9 @@ exports[`Current Weather unit tests it should match snapshot 1`] = `
   >
     46
   </p>
-  <img
+  <i
     alt="mostlycloudy"
-    className="current-weather__icon"
-    src="http://icons.wxug.com/i/c/k/mostlycloudy.gif"
+    className="forecast-list-item__image wi wi-wu-mostlycloudy"
   />
   <div
     className="current-weather-high-low"
