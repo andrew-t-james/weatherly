@@ -1,5 +1,5 @@
 .forecast {
-  border: 1px solid red;
+  border-bottom: var(--line);
   padding: 2rem 0;
   width: 100%;
 }

@@ -6,7 +6,7 @@ import Search from '../../Search/Search.js';
 import TenDayForecast from '../../TenDayForecast/TenDayForecast.js';
 import CurrentWeather from '../../CurrentWeather/CurrentWeather.js';
 import SevenHour from '../../SevenHour/SevenHour.js';
-import Modal from '../../Modal/Modal.js';
+import Welcome from '../../Welcome/Welcome.js';
 import { API_KEY } from '../../../API_KEY.js';
 import mockJSON from '../../../mock-data/mock-data.json';
 
@@ -38,10 +38,10 @@ describe('App unit tests', () => {
     expect(actual).toEqual(expected);
   });
 
-  test('It should render a welcome Modal if state has no location', () => {
+  test('It should render a welcome Welcome if state has no location', () => {
     const expected = 1;
 
-    const actual = app.find(Modal).length;
+    const actual = app.find(Welcome).length;
 
     expect(actual).toEqual(expected);
   });
@@ -94,14 +94,14 @@ describe('App unit tests', () => {
     expect(actual).toBe(expected);
   });
 
-  test('should display an Modal if hasError is true', async () => {
+  test('should display an Welcome if hasError is true', async () => {
     const expected = 1;
 
     app.setState({
       hasError: true
     });
 
-    const actual = app.find(Modal).length;
+    const actual = app.find(Welcome).length;
 
     expect(actual).toBe(expected);
   });

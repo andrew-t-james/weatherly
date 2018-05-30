@@ -2,7 +2,7 @@ import React from 'react';
 import Search from '../Search/Search.js';
 import storm from '../../video/storm.mp4';
 import stormPoster from '../../image/storm-poster.png';
-import './Modal.css';
+import './Welcome.css';
 
 const Modal = (props) => {
   const { updateLocation, hasError, hasLocation } = props;

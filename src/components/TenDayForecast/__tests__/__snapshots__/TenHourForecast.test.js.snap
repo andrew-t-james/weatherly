@@ -22,7 +22,7 @@ exports[`Forecast Card it should match snapshot 1`] = `
       </h2>
       <i
         alt="partlycloudy"
-        className="forecast-list-item__image wi wi-wu-partlycloudy"
+        className="forecast-list-item__icon wi wi-wu-partlycloudy"
       />
       <p
         className="forecast-conditions"
@@ -41,7 +41,7 @@ exports[`Forecast Card it should match snapshot 1`] = `
       </h2>
       <i
         alt="partlycloudy"
-        className="forecast-list-item__image wi wi-wu-partlycloudy"
+        className="forecast-list-item__icon wi wi-wu-partlycloudy"
       />
       <p
         className="forecast-conditions"

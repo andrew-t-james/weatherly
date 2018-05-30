@@ -3,7 +3,7 @@ import { API_KEY } from '../../API_KEY.js';
 import { dailyForecast, hourlyForecast, locationForecast } from '../../data-helpers/data-helpers.js';
 import mockJSONResponse from '../../mock-data/mock-data.json';
 import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
-import Modal from '../Modal/Modal.js';
+import Welcome from '../Welcome/Welcome.js';
 import Search from '../Search/Search.js';
 import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
@@ -86,10 +86,12 @@ class App extends Component {
 
     // console.log(trie);
     if (hasError || !hasLocation) {
-      return <Modal
-        hasError={hasError}
-        hasLocation={hasLocation}
-        updateLocation={this.updateLocation}/>;
+      return (
+        <Welcome
+          hasError={hasError}
+          hasLocation={hasLocation}
+          updateLocation={this.updateLocation}/>
+      );
     }
 
     return (
