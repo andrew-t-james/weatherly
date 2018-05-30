@@ -20,7 +20,7 @@ exports[`App unit tests it should match snapshot 1`] = `
     >
       <input
         aria-label="Input a City and State, or Zip code to search for weather by location"
-        className="search-form__input"
+        className="search-form__input "
         list="cities"
         name="location"
         onChange={[Function]}
