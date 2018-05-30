@@ -13,6 +13,10 @@ import mockJSON from '../../../mock-data/mock-data.json';
 describe('App unit tests', () => {
   let app;
 
+  global.localStorage = {};
+  global.localStorage.setItem = jest.fn();
+  global.localStorage.getItem = jest.fn();
+
   beforeEach(() => app = shallow(<App />));
 
   test('It should have a default values of null for currentLocations values', () => {
@@ -107,11 +111,11 @@ describe('App unit tests', () => {
   });
 
   test('it should match snapshot', () => {
-    const app = renderer
-      .create(<App />)
+    const welcome = renderer
+      .create(<Welcome />)
       .toJSON();
 
-    expect(app).toMatchSnapshot();
+    expect(welcome).toMatchSnapshot();
   });
 
   describe('API Unit tests', () => {

@@ -7,7 +7,7 @@ describe('Search Unit Test', () => {
   const mockFn = jest.fn();
   let search;
 
-  beforeEach(() => search =  shallow(<Search updateLocation={mockFn}/>));
+  beforeEach(() => search =  shallow(<Search updateLocation={mockFn} />));
 
   test('it should have a form, input, and button', () => {
     const expectedForm = 1;
