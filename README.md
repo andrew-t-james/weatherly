@@ -73,7 +73,7 @@ The application should have a 10 day forecast component. Each day should be a ca
 
 ## Phase five
 
-1. A✅ dd autocomplete functionality to your search input
+1. ✅ Add autocomplete functionality to your search input
 import your completeMe into your Weathrly project. Populate it with this list of city/states.
 
 1. ✅ When a user starts typing in a city/state or zip code display a list of possible suggestions using your completeMe’s suggest function.
