@@ -131,9 +131,6 @@ describe('Search Unit Test', () => {
 
     search.instance().submitLocation(mockEvent);
     expect(mockFn).toHaveBeenCalledWith(expectedCity, expectedState);
-
-
-
   });
 
   test('it should match snapshot', () => {
