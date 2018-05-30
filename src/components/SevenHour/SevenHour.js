@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ForecastCard from '../ForecastCard/ForecastCard.js';
 
-const SevenHour = (props) => {
+const SevenHour = props => {
   const { hourlyForecast } = props;
 
   return (
@@ -18,6 +19,10 @@ const SevenHour = (props) => {
       </ul>
     </section>
   );
+};
+
+SevenHour.propTypes = {
+  hourlyForecast: PropTypes.array
 };
 
 export default SevenHour;

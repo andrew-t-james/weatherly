@@ -66,6 +66,10 @@
   cursor: pointer;
 }
 
+.search-form__button:disabled:hover {
+  cursor: not-allowed;
+}
+
 .search-form__button:active {
   transform: translateY(2px);
 }

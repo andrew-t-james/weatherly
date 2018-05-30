@@ -46,8 +46,8 @@ class App extends Component {
     // this.updateLocation('Louisville');
   }
 
-  updateLocation(city) {
-    const apiEndPoint = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/KY/${city}.json`;
+  updateLocation(city, state) {
+    const apiEndPoint = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/${state}/${city}.json`;
 
     fetch(apiEndPoint)
       .then(response => response.json())

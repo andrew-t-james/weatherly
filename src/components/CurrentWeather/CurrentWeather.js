@@ -1,8 +1,8 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import './CurrentWeather.css';
 
-const CurrentWeather = (props) => {
+const CurrentWeather = props => {
   const { city, icon, temperature, weather, high, low, description } = props.currentWeather;
 
   return (
@@ -16,6 +16,17 @@ const CurrentWeather = (props) => {
       {description && <p className="current-weather__description">{description}</p>}
     </section>
   );
+};
+
+CurrentWeather.propTypes = {
+  currentWeather: PropTypes.object,
+  city: PropTypes.string,
+  temperature: PropTypes.number,
+  high: PropTypes.string,
+  low: PropTypes.string,
+  icon: PropTypes.string,
+  weather: PropTypes.string,
+  description: PropTypes.string
 };
 
 export default CurrentWeather;

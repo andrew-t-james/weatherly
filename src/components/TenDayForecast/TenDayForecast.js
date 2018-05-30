@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ForecastCard from '../ForecastCard/ForecastCard.js';
 
 import './TenDayForecast.css';
 
 
-const TenDayForecast = (props) => {
+const TenDayForecast = props => {
   const { tenDayForecast } = props;
 
   return (
@@ -21,6 +22,10 @@ const TenDayForecast = (props) => {
       </ul>
     </section>
   );
+};
+
+TenDayForecast.propTypes = {
+  tenDayForecast: PropTypes.array
 };
 
 export default TenDayForecast;
