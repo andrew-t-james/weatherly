@@ -1,6 +1,32 @@
 .current-weather {
   align-items: center;
+  border-bottom: var(--line);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 2rem;
+}
+
+.current-weather__title {
+  font-size: 3rem;
+}
+
+.current-weather__weather,
+.current-weather__temperature,
+.current-weather__description {
+  font-size: 2rem;
+}
+
+.current-weather__icon {
+  font-size: 8rem;
+  margin: 2rem 0;
+}
+
+.current-weather__high,
+.current-weather__low {
+  font-size: 1.8rem;
+}
+
+.current-weather__description {
+  margin-top: 1rem;
 }

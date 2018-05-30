@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import { API_KEY } from '../../API_KEY.js';
+import { dailyForecast, hourlyForecast, locationForecast } from '../../data-helpers/data-helpers.js';
+import mockJSONResponse from '../../mock-data/mock-data.json';
 import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
+import Welcome from '../Welcome/Welcome.js';
+import Search from '../Search/Search.js';
 import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
+import './App.css';
 
-import fetch from 'isomorphic-fetch';
-import { mockData } from '../../mock-data/mock-data.js';
-import { locationForecast, dailyForecast, hourlyForecast, baseUrl } from '../../data-helpers/data-helpers.js';
+// const Trie = require('complete-location-search');
 
 class App extends Component {
   constructor() {
@@ -23,47 +27,85 @@ class App extends Component {
       },
       sevenHourForecast: [],
       tenDayForecast: [],
+      hasError: false,
+      hasLocation: false,
     };
+
+    this.updateLocation = this.updateLocation.bind(this);
   }
 
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        currentLocation: locationForecast(mockData),
-        sevenHourForecast: hourlyForecast(mockData),
-        tenDayForecast: dailyForecast(mockData)
+        currentLocation: locationForecast(mockJSONResponse),
+        sevenHourForecast: hourlyForecast(mockJSONResponse),
+        tenDayForecast: dailyForecast(mockJSONResponse)
       });
     }, 100);
-    // this.updateLocation();
+    // this.updateLocation('Louisville');
   }
 
-  updateLocation(url = baseUrl) {
-    fetch(url)
+  updateLocation(city) {
+    const apiEndPoint = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/KY/${city}.json`;
+
+    fetch(apiEndPoint)
       .then(response => response.json())
       .then(response => {
         this.setState({
           currentLocation: locationForecast(response),
           sevenHourForecast: hourlyForecast(response),
-          tenDayForecast: dailyForecast(response)
+          tenDayForecast: dailyForecast(response),
+          hasError: false,
+          hasLocation: true
         });
       })
-      .catch(error => console.error(error));
+      .catch(() => {
+        this.setState({
+          currentLocation: {
+            city: null,
+            weather: null,
+            icon: null,
+            iconUrl: null,
+            temperature: null,
+            high: null,
+            low: null,
+            description: null
+          },
+          sevenHourForecast: [],
+          tenDayForecast: [],
+          hasLocation: false,
+          hasError: true,
+        });
+      });
   }
 
   render() {
-    const { tenDayForecast, currentLocation, sevenHourForecast } = this.state;
+    const { tenDayForecast, currentLocation, sevenHourForecast, hasError, hasLocation } = this.state;
+    // const trie = new Trie();
+
+    // console.log(trie);
+    if (hasError || !hasLocation) {
+      return (
+        <Welcome
+          hasError={hasError}
+          hasLocation={hasLocation}
+          updateLocation={this.updateLocation}/>
+      );
+    }
 
     return (
-      <div>
-        <h1>Weathrly App</h1>
+      <main className="container">
+        <Search
+          updateLocation={this.updateLocation} />
         <CurrentWeather
+          className="current-weather"
           currentWeather={currentLocation} />
         <SevenHour
           hourlyForecast={sevenHourForecast} />
         <TenDayForecast
           tenDayForecast={tenDayForecast} />
-      </div>
+      </main>
     );
   }
 }

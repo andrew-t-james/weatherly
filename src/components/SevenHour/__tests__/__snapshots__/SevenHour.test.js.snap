@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Seven Hour unit tests it should match snapshot 1`] = `
+<section
+  className="forecast"
+>
+  <h1
+    className="forecast-title"
+  >
+    Seven Hour
+  </h1>
+  <ul
+    className="forecast-list"
+  >
+    <li
+      className="forecast-list-item"
+    >
+      <h2
+        className="forecast-list-item__title"
+      >
+        12
+      </h2>
+      <i
+        alt="partlycloudy"
+        className="forecast-list-item__icon wi wi-wu-partlycloudy"
+      />
+      <p
+        className="forecast-conditions"
+      >
+        47
+        °
+      </p>
+    </li>
+    <li
+      className="forecast-list-item"
+    >
+      <h2
+        className="forecast-list-item__title"
+      >
+        13
+      </h2>
+      <i
+        alt="partlycloudy"
+        className="forecast-list-item__icon wi wi-wu-partlycloudy"
+      />
+      <p
+        className="forecast-conditions"
+      >
+        49
+        °
+      </p>
+    </li>
+  </ul>
+</section>
+`;

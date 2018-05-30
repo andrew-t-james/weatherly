@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App unit tests it should match snapshot 1`] = `
+<div
+  className="container"
+>
+  <header
+    className="header"
+  >
+    <h1
+      className="header__title"
+    >
+      Weathrly
+    </h1>
+    <form
+      className="search-form"
+      onSubmit={[Function]}
+    >
+      <input
+        className="search-form__input"
+        name="location"
+        onChange={[Function]}
+        placeholder="Search by City and State or Zip"
+        type="text"
+        value=""
+      />
+      <button
+        className="search-form__button"
+        disabled={true}
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+  </header>
+  <div
+    className="welcome"
+  >
+    <h2
+      className="welcome__title"
+    >
+      Welcome To Weathrly
+    </h2>
+    <video
+      autoPlay={true}
+      className="welcome__video"
+      loop={true}
+      muted={true}
+      poster="storm-poster.png"
+    >
+      <source
+        src="storm.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+</div>
+`;

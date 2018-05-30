@@ -8,7 +8,7 @@ const TenDayForecast = (props) => {
   const { tenDayForecast } = props;
 
   return (
-    <div className="forecast">
+    <section className="forecast">
       <h1 className="forecast-title">Ten Day Forecast</h1>
       <ul className="forecast-list">
         {
@@ -19,7 +19,7 @@ const TenDayForecast = (props) => {
           )
         }
       </ul>
-    </div>
+    </section>
   );
 };
 

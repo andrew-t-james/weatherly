@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Current Weather unit tests it should match snapshot 1`] = `
+<section
+  className="current-weather"
+>
+  <h2
+    className="current-weather__title"
+  >
+    Louisville
+  </h2>
+  <p
+    className="current-weather__weather"
+  >
+    Mostly Cloudy
+  </p>
+  <p
+    className="current-weather__temperature"
+  >
+    46
+     °
+  </p>
+  <i
+    alt="mostlycloudy"
+    className="current-weather__icon wi wi-wu-mostlycloudy"
+  />
+  <p
+    className="current-weather__high"
+  >
+    51
+    ° ↑
+  </p>
+  <p
+    className="current-weather__low"
+  >
+    32
+    ° ↓
+  </p>
+  <p
+    className="current-weather__description"
+  >
+    Sun and clouds mixed. High 51F. Winds NE at 10 to 15 mph.
+  </p>
+</section>
+`;

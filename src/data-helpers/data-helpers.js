@@ -1,7 +1,3 @@
-import { API_KEY } from '../API_KEY.js';
-
-export const baseUrl = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/CO/Denver.json`;
-
 export const locationForecast = (weatherData) =>{
   const location = {
     city: weatherData.current_observation.display_location.city,
@@ -25,7 +21,7 @@ export const dailyForecast = (weatherData) => {
   return originalForecastArray.map((day) => {
     return {
       day: day.date.weekday,
-      conditions: day.conditions,
+      // conditions: day.conditions,
       iconUrl: day.icon_url,
       iconTitle: day.icon,
       high: day.high.fahrenheit,

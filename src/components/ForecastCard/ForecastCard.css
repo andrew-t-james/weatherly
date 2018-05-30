@@ -5,13 +5,43 @@
 }
 
 .forecast-list-item {
-  border: 1px solid green;
+  background-color: var(--color-grey-light-2);
+  border-radius: 4px;
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,0.2);
   flex: 1;
-  /* flex-basis: 30rem; */
+  flex-basis: 8rem;
+  margin: 1rem;
   padding: 2rem 1rem;
+  transition: all 0.2s ease-in-out;
 }
 
-.high-low {
-  display: flex;
-  justify-content: space-around;
+.forecast-list-item:hover {
+  box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, 0.2);
+}
+
+.forecast-list-item__hour,
+.forecast-list-item__title,
+.forecast-conditions,
+.forecast-high,
+.forecast-low {
+  color: var(--color-grey-dark-1);
+}
+
+.forecast-conditions,
+.forecast-high,
+.forecast-low {
+  font-size: 1.6rem;
+}
+
+.forecast-list-item__hour {
+  font-size: 2rem;
+}
+
+.forecast-list-item__title {
+  font-size: 1.5rem;
+}
+
+.forecast-list-item__icon {
+  font-size: 3rem;
+  margin: 1rem;
 }

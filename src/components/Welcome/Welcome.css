@@ -1,0 +1,22 @@
+.welcome {
+  position: relative;
+}
+
+.welcome,
+.error {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  max-height: 50rem;
+  overflow: hidden;
+}
+
+.welcome__title {
+  color: #F7F7F7;
+  position: absolute;
+}
+
+.welcome__title,
+.error__title {
+  font-size: 3.5rem;
+}
