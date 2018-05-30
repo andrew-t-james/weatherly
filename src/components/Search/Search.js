@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Trie from '../../data-helpers/Trie.js';
 import { cities } from '../../data-helpers/cities.js';
-
 import './Search.css';
-
-// TODO: Add Prefix trie to search component
 
 class Search extends Component {
   constructor() {

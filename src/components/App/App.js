@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { API_KEY } from '../../API_KEY.js';
 import { dailyForecast, hourlyForecast, locationForecast } from '../../data-helpers/data-helpers.js';
-import mockJSONResponse from '../../mock-data/mock-data.json';
 import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
 import Welcome from '../Welcome/Welcome.js';
 import Search from '../Search/Search.js';
@@ -32,20 +31,20 @@ class App extends Component {
     this.updateLocation = this.updateLocation.bind(this);
   }
 
-
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        currentLocation: locationForecast(mockJSONResponse),
-        sevenHourForecast: hourlyForecast(mockJSONResponse),
-        tenDayForecast: dailyForecast(mockJSONResponse)
-      });
-    }, 100);
-    // this.updateLocation('Louisville');
+    const storedLocation = JSON.parse(localStorage.getItem('location'));
+
+    if (storedLocation) {
+      const { city, state } = storedLocation;
+
+      this.updateLocation(city, state);
+    }
   }
 
   updateLocation(city, state) {
     const apiEndPoint = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/${state}/${city}.json`;
+
+    localStorage.setItem('location', JSON.stringify({city, state}));
 
     fetch(apiEndPoint)
       .then(response => response.json())
@@ -80,14 +79,11 @@ class App extends Component {
 
   render() {
     const { tenDayForecast, currentLocation, sevenHourForecast, hasError, hasLocation } = this.state;
-    // const trie = new Trie();
 
-    // console.log(trie);
     if (hasError || !hasLocation) {
       return (
         <Welcome
           hasError={hasError}
-          hasLocation={hasLocation}
           updateLocation={this.updateLocation}/>
       );
     }
