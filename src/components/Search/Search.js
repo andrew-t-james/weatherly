@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Trie from '../../data-helpers/Trie.js';
 import { cities } from '../../data-helpers/cities.js';
 
@@ -30,9 +31,12 @@ class Search extends Component {
 
   submitLocation(event) {
     const { location } = this.state;
+    const splitString = location.trim(' ').split(', ');
+    const city = splitString[0];
+    const state = splitString[1];
 
     event.preventDefault();
-    this.props.updateLocation(location);
+    this.props.updateLocation(city, state);
 
     this.setState({
       location: ''
@@ -76,5 +80,11 @@ class Search extends Component {
     );
   }
 }
+
+Search.propTypes = {
+  updateLocation: PropTypes.func,
+  location: PropTypes.string,
+  autoComplete: PropTypes.func
+};
 
 export default Search;

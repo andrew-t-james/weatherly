@@ -124,7 +124,7 @@ describe('App unit tests', () => {
           json: () => Promise.resolve(mockJSON)
         }));
 
-      await app.instance().updateLocation('Louisville');
+      await app.instance().updateLocation('Louisville', 'KY');
       expect(window.fetch).toHaveBeenCalledTimes(1);
       expect(window.fetch).toHaveBeenCalledWith(apiEndPoint);
     });

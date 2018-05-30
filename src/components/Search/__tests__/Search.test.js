@@ -110,7 +110,9 @@ describe('Search Unit Test', () => {
   });
 
   test('When form submitLocation method is invoked with the correct arguments', () => {
-    const expected = 'Louisville';
+    let location = 'Louisville, KY';
+
+    location.trim(jest.fn()).split(jest.fn());
 
     const mockEvent = {
       preventDefault: jest.fn(),
@@ -119,13 +121,19 @@ describe('Search Unit Test', () => {
       }
     };
 
+    location = ['Louisville', 'KY'];
+    const expectedCity = location[0];
+    const expectedState = location[1];
 
     search.setState({
-      location: 'Louisville'
+      location: 'Louisville, KY'
     });
 
     search.instance().submitLocation(mockEvent);
-    expect(mockFn).toHaveBeenCalledWith(expected);
+    expect(mockFn).toHaveBeenCalledWith(expectedCity, expectedState);
+
+
+
   });
 
   test('it should match snapshot', () => {
