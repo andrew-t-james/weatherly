@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './CurrentWeather.css';
 
-const CurrentWeather = (props) => {
+const CurrentWeather = props => {
   const { city, icon, temperature, weather, high, low, description } = props.currentWeather;
 
   return (

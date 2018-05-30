@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ForecastCard.css';
 
-const ForecastCard = (props) => {
+const ForecastCard = props => {
   const { iconTitle, high, low, conditions, day } = props.forecast;
   let { hour } = props.forecast;
 

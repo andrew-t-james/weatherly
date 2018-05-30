@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Trie from '../../data-helpers/Trie.js';
+import { cities } from '../../data-helpers/cities.js';
+
 import './Search.css';
 
 // TODO: Add Prefix trie to search component
@@ -7,9 +10,12 @@ class Search extends Component {
   constructor() {
     super();
     this.state = {
-      location: ''
+      location: '',
+      autoComplete: new Trie()
     };
 
+    this.state.autoComplete.populate(cities);
+    this.state.autoComplete.suggest(this.state.location);
     this.updateInput = this.updateInput.bind(this);
     this.submitLocation = this.submitLocation.bind(this);
   }
@@ -50,7 +56,15 @@ class Search extends Component {
             onChange={event => this.updateInput(event)}
             name="location"
             type="text"
-            value={location}/>
+            list='cities'
+            value={location} />
+          <datalist id="cities">
+            {
+              cities.map((city, index) =>
+                <option key={index} value={city} />
+              )
+            }
+          </datalist>
           <button
             className="search-form__button"
             type="submit"

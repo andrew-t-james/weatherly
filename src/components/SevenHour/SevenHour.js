@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ForecastCard from '../ForecastCard/ForecastCard.js';
 
-const SevenHour = (props) => {
+const SevenHour = props => {
   const { hourlyForecast } = props;
 
   return (
