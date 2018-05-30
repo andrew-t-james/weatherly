@@ -44,7 +44,9 @@ class Search extends Component {
 
   render() {
     const  { location } = this.state;
+    const { hasError } = this.props;
 
+    console.log(hasError);
     return (
       <header className="header">
         <h1 tabIndex="0" className="header__title" aria-label="Weathrly A weather App">Weathrly</h1>
@@ -52,7 +54,7 @@ class Search extends Component {
           className="search-form"
           onSubmit={event => this.submitLocation(event)}>
           <input
-            className="search-form__input"
+            className={`search-form__input ${hasError ? 'error' : ''}`}
             placeholder="Search by City and State or Zip"
             onChange={event => this.updateInput(event)}
             name="location"
@@ -72,6 +74,7 @@ class Search extends Component {
             aria-label="Search for weather"
             className="search-form__button"
             type="submit"
+
             disabled={!location.trim(' ')}>
             Search
           </button>

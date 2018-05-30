@@ -31,6 +31,10 @@
   width: 90%;
 }
 
+.error {
+  border: 1px solid var(--color-error-primary);
+}
+
 .search-form__input:focus {
   background-color: var(--color-grey-light-3);
   font-size: 2rem;

@@ -11,6 +11,7 @@ const Welcome = (props) => {
   return (
     <div className="container">
       <Search
+        hasError={hasError}
         updateLocation={updateLocation} />
       {
         !hasLocation && !hasError &&
@@ -23,9 +24,9 @@ const Welcome = (props) => {
       }
       {
         hasError &&
-        <div className="error">
-          <h2 className="error__title">Please Enter a valid City State or Zip</h2>
-        </div>
+        <section className="error-message">
+          <h2 className="error-message__title">Oops Something went wrong, Please enter valid City and State or Zip</h2>
+        </section>
       }
     </div>
   );
