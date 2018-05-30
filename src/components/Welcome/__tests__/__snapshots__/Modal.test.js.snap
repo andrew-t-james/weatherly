@@ -8,7 +8,9 @@ exports[`App unit tests it should match snapshot 1`] = `
     className="header"
   >
     <h1
+      aria-label="Weathrly A weather App"
       className="header__title"
+      tabIndex="0"
     >
       Weathrly
     </h1>
@@ -17,6 +19,7 @@ exports[`App unit tests it should match snapshot 1`] = `
       onSubmit={[Function]}
     >
       <input
+        aria-label="Input a City and State, or Zip code to search for weather by location"
         className="search-form__input"
         list="cities"
         name="location"
@@ -3030,8 +3033,10 @@ exports[`App unit tests it should match snapshot 1`] = `
         />
       </datalist>
       <button
+        aria-label="Search for weather"
         className="search-form__button"
         disabled={true}
+        tabIndex="0"
         type="submit"
       >
         Search
@@ -3042,11 +3047,19 @@ exports[`App unit tests it should match snapshot 1`] = `
     className="welcome"
   >
     <h2
+      aria-label="Welcome to Weathrly a weather App"
       className="welcome__title"
+      tabIndex="0"
     >
-      Welcome To Weathrly
+      Welcome To 
+      <span
+        className="header__title"
+      >
+        Weathrly
+      </span>
     </h2>
     <video
+      aria-label="Time lapse of clouds"
       autoPlay={true}
       className="welcome__video"
       loop={true}

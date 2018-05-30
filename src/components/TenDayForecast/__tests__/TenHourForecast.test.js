@@ -25,7 +25,7 @@ describe('Forecast Card', () => {
     }
   ];
 
-  let foreCastCard = shallow(<TenDayForecast tenDayForecast={twoDayForecast} />);
+  const foreCastCard = shallow(<TenDayForecast tenDayForecast={twoDayForecast} />);
 
   test('it should render multiple Cards components', () => {
     const expected = 2;

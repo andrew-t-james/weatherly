@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Search from '../Search/Search.js';
 import storm from '../../video/storm.mp4';
 import stormPoster from '../../image/storm-poster.png';
 import './Welcome.css';
 
-const Modal = (props) => {
+const Welcome = (props) => {
   const { updateLocation, hasError, hasLocation } = props;
 
   return (
@@ -14,8 +15,8 @@ const Modal = (props) => {
       {
         !hasLocation && !hasError &&
           <div className="welcome">
-            <h2 className="welcome__title">Welcome To Weathrly</h2>
-            <video loop muted autoPlay poster={stormPoster} className="welcome__video">
+            <h2 tabIndex="0" className="welcome__title" aria-label="Welcome to Weathrly a weather App">Welcome To <span className="header__title">Weathrly</span></h2>
+            <video aria-label="Time lapse of clouds" loop muted autoPlay poster={stormPoster} className="welcome__video">
               <source src={storm} type="video/mp4" />
             </video>
           </div>
@@ -30,4 +31,10 @@ const Modal = (props) => {
   );
 };
 
-export default Modal;
+Welcome.propTypes = {
+  updateLocation: PropTypes.func,
+  hasError: PropTypes.bool,
+  hasLocation: PropTypes.bool
+};
+
+export default Welcome;

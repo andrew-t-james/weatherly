@@ -5,39 +5,53 @@ exports[`Current Weather unit tests it should match snapshot 1`] = `
   className="current-weather"
 >
   <h2
+    aria-label="Louisville"
     className="current-weather__title"
+    tabIndex="0"
   >
     Louisville
   </h2>
   <p
+    aria-label="Mostly Cloudy"
     className="current-weather__weather"
+    tabIndex="0"
   >
     Mostly Cloudy
   </p>
   <p
+    aria-label={46}
     className="current-weather__temperature"
+    tabIndex="0"
   >
     46
      °
   </p>
   <i
     alt="mostlycloudy"
+    aria-label="mostlycloudy"
     className="current-weather__icon wi wi-wu-mostlycloudy"
+    tabIndex="0"
   />
   <p
+    aria-label="The high will be 51 today"
     className="current-weather__high"
+    tabIndex="0"
   >
     51
     ° ↑
   </p>
   <p
+    aria-label="The Low will be 32 today"
     className="current-weather__low"
+    tabIndex="0"
   >
     32
     ° ↓
   </p>
   <p
+    aria-label="Sun and clouds mixed. High 51F. Winds NE at 10 to 15 mph."
     className="current-weather__description"
+    tabIndex="0"
   >
     Sun and clouds mixed. High 51F. Winds NE at 10 to 15 mph.
   </p>

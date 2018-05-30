@@ -2,10 +2,14 @@
 
 exports[`ForecastCard Unit tests it should match snapshot with daily forecast 1`] = `
 <li
+  aria-label="Hourly Forecast Item"
   className="forecast-list-item"
+  tabIndex="0"
 >
   <h2
+    aria-label="Weather for Wednesday"
     className="forecast-list-item__title"
+    tabIndex="0"
   >
     Wednesday
   </h2>
@@ -14,13 +18,17 @@ exports[`ForecastCard Unit tests it should match snapshot with daily forecast 1`
     className="forecast-list-item__icon wi wi-wu-partlycloudy"
   />
   <p
+    aria-label="Today the high will be 51 degrees"
     className="forecast-high"
+    tabIndex="0"
   >
     51
      ° ↑
   </p>
   <p
+    aria-label="Today the low will be 32 degrees"
     className="forecast-low"
+    tabIndex="0"
   >
     32
      ° ↓
@@ -30,7 +38,9 @@ exports[`ForecastCard Unit tests it should match snapshot with daily forecast 1`
 
 exports[`ForecastCard Unit tests it should match snapshot with hour forecast 1`] = `
 <li
+  aria-label="Hourly Forecast Item"
   className="forecast-list-item"
+  tabIndex="0"
 >
   <h2
     className="forecast-list-item__hour"
@@ -42,7 +52,9 @@ exports[`ForecastCard Unit tests it should match snapshot with hour forecast 1`]
     className="forecast-list-item__icon wi wi-wu-partlycloudy"
   />
   <p
+    aria-label="Weather will be 47 at 12 o'clock"
     className="forecast-conditions"
+    tabIndex="0"
   >
     47
     °

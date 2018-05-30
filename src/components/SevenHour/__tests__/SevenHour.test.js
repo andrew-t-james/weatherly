@@ -5,8 +5,6 @@ import SevenHour from '../SevenHour.js';
 import ForecastCard from '../../ForecastCard/ForecastCard.js';
 
 describe('Seven Hour unit tests', () => {
-  let sevenHour;
-
   const sevenHourForecast = [
     {
       conditions: 47,
@@ -26,7 +24,7 @@ describe('Seven Hour unit tests', () => {
     }
   ];
 
-  beforeEach(() => sevenHour =  shallow(<SevenHour hourlyForecast={sevenHourForecast} />));
+  const sevenHour = shallow(<SevenHour hourlyForecast={sevenHourForecast} />);
 
   test('it should render multiple Cards components', () => {
     const expected = 2;

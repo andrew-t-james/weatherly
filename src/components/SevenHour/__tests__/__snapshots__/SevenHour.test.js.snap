@@ -5,18 +5,24 @@ exports[`Seven Hour unit tests it should match snapshot 1`] = `
   className="forecast"
 >
   <h1
+    aria-label="Hourly Forecast for the next 7 hours"
     className="forecast-title"
+    tabIndex="0"
   >
-    Seven Hour
+    Hourly
   </h1>
   <ul
     className="forecast-list"
   >
     <li
+      aria-label="Hourly Forecast Item"
       className="forecast-list-item"
+      tabIndex="0"
     >
       <h2
+        aria-label="Weather for 12"
         className="forecast-list-item__title"
+        tabIndex="0"
       >
         12
       </h2>
@@ -25,17 +31,23 @@ exports[`Seven Hour unit tests it should match snapshot 1`] = `
         className="forecast-list-item__icon wi wi-wu-partlycloudy"
       />
       <p
+        aria-label="Weather will be 47 at undefined o'clock"
         className="forecast-conditions"
+        tabIndex="0"
       >
         47
         °
       </p>
     </li>
     <li
+      aria-label="Hourly Forecast Item"
       className="forecast-list-item"
+      tabIndex="0"
     >
       <h2
+        aria-label="Weather for 13"
         className="forecast-list-item__title"
+        tabIndex="0"
       >
         13
       </h2>
@@ -44,7 +56,9 @@ exports[`Seven Hour unit tests it should match snapshot 1`] = `
         className="forecast-list-item__icon wi wi-wu-partlycloudy"
       />
       <p
+        aria-label="Weather will be 49 at undefined o'clock"
         className="forecast-conditions"
+        tabIndex="0"
       >
         49
         °

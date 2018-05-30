@@ -7,7 +7,12 @@ const SevenHour = props => {
 
   return (
     <section className="forecast">
-      <h1 className="forecast-title">Seven Hour</h1>
+      <h1
+        tabIndex="0"
+        aria-label="Hourly Forecast for the next 7 hours"
+        className="forecast-title">
+      Hourly
+      </h1>
       <ul className="forecast-list">
         {
           hourlyForecast.map((hour, index) =>

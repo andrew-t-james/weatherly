@@ -10,7 +10,12 @@ const TenDayForecast = props => {
 
   return (
     <section className="forecast">
-      <h1 className="forecast-title">Ten Day Forecast</h1>
+      <h1
+        tabIndex="0"
+        aria-label="Daily forecast for the next 10 days"
+        className="forecast-title">
+      Daily
+      </h1>
       <ul className="forecast-list">
         {
           tenDayForecast.map((forecast, index) =>
