@@ -55,6 +55,22 @@ describe('ForecastCard Unit tests', () => {
     expect(actualLow).toBe(expectedLow);
   });
 
+  test('it should render correct time when time is less than 12', () => {
+    const midnight = {
+      conditions: 47,
+      hour: 9,
+      high: null,
+      iconUrl: "http://icons.wxug.com/i/c/k/partlycloudy.gif",
+      low: null
+    };
+
+    const card = shallow(<ForecastCard forecast={midnight}/>);
+    const expectedTitle = '9:00';
+    const actualTitle = card.find('.forecast-list-item__hour').text();
+
+    expect(actualTitle).toBe(expectedTitle);
+  });
+
   test('it should render correct time if time is midnight', () => {
     const midnight = {
       conditions: 47,
