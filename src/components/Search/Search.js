@@ -47,7 +47,7 @@ class Search extends Component {
 
     return (
       <header className="header">
-        <h1 className="header__title">Weathrly</h1>
+        <h1 tabIndex="0" className="header__title" aria-label="Weathrly A weather App">Weathrly</h1>
         <form
           className="search-form"
           onSubmit={event => this.submitLocation(event)}>
@@ -58,6 +58,7 @@ class Search extends Component {
             name="location"
             type="text"
             list='cities'
+            aria-label="Input a City and State, or Zip code to search for weather by location"
             value={location} />
           <datalist id="cities">
             {
@@ -67,6 +68,8 @@ class Search extends Component {
             }
           </datalist>
           <button
+            tabIndex="0"
+            aria-label="Search for weather"
             className="search-form__button"
             type="submit"
             disabled={!location.trim(' ')}>

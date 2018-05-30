@@ -7,13 +7,56 @@ const CurrentWeather = props => {
 
   return (
     <section className="current-weather">
-      <h2 className="current-weather__title">{city}</h2>
-      <p className="current-weather__weather">{weather}</p>
-      <p className="current-weather__temperature">{temperature} &#176;</p>
-      <i className={`current-weather__icon wi wi-wu-${icon}`} alt={icon}/>
-      {high && <p className="current-weather__high">{high}&#176; &uarr;</p>}
-      {low && <p className="current-weather__low">{low}&#176; &darr;</p>}
-      {description && <p className="current-weather__description">{description}</p>}
+      <h2
+        tabIndex="0"
+        className="current-weather__title"
+        aria-label={city}>
+        {city}
+      </h2>
+      <p
+        tabIndex="0"
+        className="current-weather__weather"
+        aria-label={weather}>
+        {weather}
+      </p>
+      <p
+        tabIndex="0"
+        className="current-weather__temperature"
+        aria-label={temperature}
+      >{temperature} &#176;
+      </p>
+      <i
+        tabIndex="0"
+        className={`current-weather__icon wi wi-wu-${icon}`}
+        aria-label={icon}
+        alt={icon}/>
+      {
+        high &&
+        <p
+          tabIndex="0"
+          aria-label={`The high will be ${high} today`}
+          className="current-weather__high">
+          {high}&#176; &uarr;
+        </p>
+      }
+      {
+        low &&
+        <p
+          tabIndex="0"
+          aria-label={`The Low will be ${low} today`}
+          className="current-weather__low">
+          {low}&#176; &darr;
+        </p>
+      }
+      {
+        description &&
+        <p
+          tabIndex="0"
+          aria-label={description}
+          className="current-weather__description">
+          {description}
+        </p>
+      }
     </section>
   );
 };
