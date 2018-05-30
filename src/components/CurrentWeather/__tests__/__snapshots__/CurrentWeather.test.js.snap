@@ -18,27 +18,24 @@ exports[`Current Weather unit tests it should match snapshot 1`] = `
     className="current-weather__temperature"
   >
     46
+     °
   </p>
   <i
     alt="mostlycloudy"
-    className="forecast-list-item__image wi wi-wu-mostlycloudy"
+    className="current-weather__icon wi wi-wu-mostlycloudy"
   />
-  <div
-    className="current-weather-high-low"
+  <p
+    className="current-weather__high"
   >
-    <p
-      className="current-weather__high"
-    >
-      51
-      ° ↑ High 
-    </p>
-    <p
-      className="current-weather__low"
-    >
-      32
-      ° ↓ Low
-    </p>
-  </div>
+    51
+    ° ↑
+  </p>
+  <p
+    className="current-weather__low"
+  >
+    32
+    ° ↓
+  </p>
   <p
     className="current-weather__description"
   >

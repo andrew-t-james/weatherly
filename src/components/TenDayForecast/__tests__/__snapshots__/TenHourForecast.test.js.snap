@@ -30,9 +30,6 @@ exports[`Forecast Card it should match snapshot 1`] = `
         47
         °
       </p>
-      <div
-        className="high-low"
-      />
     </li>
     <li
       className="forecast-list-item"
@@ -52,9 +49,6 @@ exports[`Forecast Card it should match snapshot 1`] = `
         49
         °
       </p>
-      <div
-        className="high-low"
-      />
     </li>
   </ul>
 </section>

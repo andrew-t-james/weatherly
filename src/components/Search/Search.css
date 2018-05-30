@@ -19,7 +19,7 @@
 
 .search-form__input {
   background-color: var(--color-grey-light-2);
-  border: none;
+  border: 1px solid var(--color-green-light-1);
   border-radius: 100px;
   color: inherit;
   font-family: inherit;
@@ -49,11 +49,12 @@
 
 .search-form__button {
   background-color: var(--color-grey-light-1);
-  border: 1px solid var(--color-grey-light-3);
+  border: none;
   border-bottom-right-radius: 100px;
+  border-left: 1px solid var(--color-green-light-1);
   border-top-right-radius: 100px;
   font-size: 1.5rem;
-  padding: 1.3rem 1.4rem;
+  padding: 1.49rem 1.234rem;
   text-transform: uppercase;
 }
 

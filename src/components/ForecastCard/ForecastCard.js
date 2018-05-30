@@ -2,7 +2,7 @@ import React from 'react';
 import './ForecastCard.css';
 
 const ForecastCard = (props) => {
-  const { iconUrl, iconTitle, high, low, conditions, day } = props.forecast;
+  const { iconTitle, high, low, conditions, day } = props.forecast;
   let { hour } = props.forecast;
 
   if (hour > 12) {
@@ -20,10 +20,8 @@ const ForecastCard = (props) => {
       }
       <i className={`forecast-list-item__image wi wi-wu-${iconTitle}`}  alt={iconTitle}/>
       {conditions && <p className="forecast-conditions">{conditions}&#176;</p>}
-      <div className="high-low">
-        {high && <p className="forecast-high">&uarr; {high} &#176;</p>}
-        {low &&  <p className="forecast-low">{low} &#176; &darr;</p>}
-      </div>
+      {high && <p className="forecast-high">{high} &#176; &uarr;</p>}
+      {low &&  <p className="forecast-low">{low} &#176; &darr;</p>}
     </li>
   );
 };

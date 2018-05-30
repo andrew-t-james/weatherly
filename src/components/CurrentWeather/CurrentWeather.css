@@ -7,7 +7,7 @@
 }
 
 .current-weather__title {
-  font-size: 2.8rem;
+  font-size: 3rem;
 }
 
 .current-weather__weather,
@@ -16,15 +16,19 @@
   font-size: 2rem;
 }
 
-.current-weather__icon {
-  height: 8rem;
+.current-weather__temperature {
+  margin-bottom: 2rem;
 }
 
-.current-weather-high-low {
-  border: 1px solid green;
-  display: flex;
+.current-weather__icon {
+  font-size: 8rem;
+}
+
+.current-weather__high,
+.current-weather__low {
   font-size: 1.8rem;
-  justify-content: space-between;
-  padding: 0 20rem;
-  width: 100%;
+}
+
+.current-weather__description {
+  margin-top: 1rem;
 }

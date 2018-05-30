@@ -28,13 +28,13 @@ describe('Current Weather unit tests', () => {
     const expectedWeather = 'Mostly Cloudy';
     const actualWeather = currentWeather.find('.current-weather__weather').text();
 
-    const expectedTemperature = '46';
+    const expectedTemperature = '46 °';
     const actualTemperature = currentWeather.find('.current-weather__temperature').text();
 
-    const expectedHigh = '51° ↑ High ';
+    const expectedHigh = '51° ↑';
     const actualHigh = currentWeather.find('.current-weather__high').text();
 
-    const expectedLow = '32° ↓ Low';
+    const expectedLow = '32° ↓';
     const actualLow = currentWeather.find('.current-weather__low').text();
 
     const expectedDescription = 'Sun and clouds mixed. High 51F. Winds NE at 10 to 15 mph.';

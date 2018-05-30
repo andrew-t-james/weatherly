@@ -13,23 +13,18 @@ exports[`ForecastCard Unit tests it should match snapshot with daily forecast 1`
     alt="partlycloudy"
     className="forecast-list-item__image wi wi-wu-partlycloudy"
   />
-  <div
-    className="high-low"
+  <p
+    className="forecast-high"
   >
-    <p
-      className="forecast-high"
-    >
-      ↑ 
-      51
-       °
-    </p>
-    <p
-      className="forecast-low"
-    >
-      32
-       ° ↓
-    </p>
-  </div>
+    51
+     ° ↑
+  </p>
+  <p
+    className="forecast-low"
+  >
+    32
+     ° ↓
+  </p>
 </li>
 `;
 
@@ -52,8 +47,5 @@ exports[`ForecastCard Unit tests it should match snapshot with hour forecast 1`]
     47
     °
   </p>
-  <div
-    className="high-low"
-  />
 </li>
 `;

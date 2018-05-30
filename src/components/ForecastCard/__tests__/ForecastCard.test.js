@@ -30,13 +30,9 @@ describe('ForecastCard Unit tests', () => {
     const expectedConditions = '47°';
     const actualConditions = card.find('.forecast-conditions').text();
 
-    const expectedHigh = 1;
-    const actualHigh = card.find('.high-low').length;
-
     expect(actualTitle).toEqual(expectedTitle);
     expect(actualImage).toEqual(expectedImage);
     expect(actualConditions).toEqual(expectedConditions);
-    expect(actualHigh).toEqual(expectedHigh);
   });
 
   test('it should render one day forecast data', () => {
@@ -47,7 +43,7 @@ describe('ForecastCard Unit tests', () => {
     const expectedImage = 1;
     const actualImage = card.find('i').length;
 
-    const expectedHigh = '↑ 51 °';
+    const expectedHigh = '51 ° ↑';
     const actualHigh = card.find('.forecast-high').text();
 
     const expectedLow = '32 ° ↓';

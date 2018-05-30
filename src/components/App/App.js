@@ -9,6 +9,8 @@ import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 import './App.css';
 
+// const Trie = require('complete-location-search');
+
 class App extends Component {
   constructor() {
     super();
@@ -80,7 +82,9 @@ class App extends Component {
 
   render() {
     const { tenDayForecast, currentLocation, sevenHourForecast, hasError, hasLocation } = this.state;
+    // const trie = new Trie();
 
+    // console.log(trie);
     if (hasError || !hasLocation) {
       return <Modal
         hasError={hasError}
