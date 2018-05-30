@@ -9,8 +9,6 @@ import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
 import './App.css';
 
-// const Trie = require('complete-location-search');
-
 class App extends Component {
   constructor() {
     super();
