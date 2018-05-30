@@ -114,6 +114,8 @@ describe('Search Unit Test', () => {
 
     location.trim(jest.fn()).split(jest.fn());
 
+    location = ['Louisville', 'KY'];
+
     const mockEvent = {
       preventDefault: jest.fn(),
       target: {
@@ -121,13 +123,12 @@ describe('Search Unit Test', () => {
       }
     };
 
-    location = ['Louisville', 'KY'];
-    const expectedCity = location[0];
-    const expectedState = location[1];
-
     search.setState({
       location: 'Louisville, KY'
     });
+
+    const expectedCity = location[0];
+    const expectedState = location[1];
 
     search.instance().submitLocation(mockEvent);
     expect(mockFn).toHaveBeenCalledWith(expectedCity, expectedState);

@@ -41,7 +41,7 @@ class App extends Component {
         tenDayForecast: dailyForecast(mockJSONResponse)
       });
     }, 100);
-    // this.updateLocation('Louisville');
+    // this.updateLocation();
   }
 
   updateLocation(city, state) {
@@ -80,14 +80,11 @@ class App extends Component {
 
   render() {
     const { tenDayForecast, currentLocation, sevenHourForecast, hasError, hasLocation } = this.state;
-    // const trie = new Trie();
 
-    // console.log(trie);
     if (hasError || !hasLocation) {
       return (
         <Welcome
           hasError={hasError}
-          hasLocation={hasLocation}
           updateLocation={this.updateLocation}/>
       );
     }
