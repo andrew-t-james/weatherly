@@ -31,7 +31,7 @@ exports[`Seven Hour unit tests it should match snapshot 1`] = `
         className="forecast-list-item__icon wi wi-wu-partlycloudy"
       />
       <p
-        aria-label="Weather will be 47 at undefinedo'clock"
+        aria-label="Weather will be 47 at undefined o'clock"
         className="forecast-conditions"
         tabIndex="0"
       >
@@ -56,7 +56,7 @@ exports[`Seven Hour unit tests it should match snapshot 1`] = `
         className="forecast-list-item__icon wi wi-wu-partlycloudy"
       />
       <p
-        aria-label="Weather will be 49 at undefinedo'clock"
+        aria-label="Weather will be 49 at undefined o'clock"
         className="forecast-conditions"
         tabIndex="0"
       >

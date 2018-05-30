@@ -20,8 +20,6 @@ const ForecastCard = props => {
       {
         hour ?
           <h2
-            tabIndex="0"
-            aria-label={`Weather at ${hour}o'clock`}
             className="forecast-list-item__hour">
             {`${hour}:00`}
           </h2> :
@@ -37,7 +35,7 @@ const ForecastCard = props => {
         conditions &&
         <p
           tabIndex="0"
-          aria-label={`Weather will be ${conditions} at ${hour}o'clock`}
+          aria-label={`Weather will be ${conditions} at ${hour} o'clock`}
           className="forecast-conditions">
           {conditions}&#176;
         </p>

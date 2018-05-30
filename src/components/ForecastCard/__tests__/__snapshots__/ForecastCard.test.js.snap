@@ -43,9 +43,7 @@ exports[`ForecastCard Unit tests it should match snapshot with hour forecast 1`]
   tabIndex="0"
 >
   <h2
-    aria-label="Weather at 12o'clock"
     className="forecast-list-item__hour"
-    tabIndex="0"
   >
     12:00
   </h2>
@@ -54,7 +52,7 @@ exports[`ForecastCard Unit tests it should match snapshot with hour forecast 1`]
     className="forecast-list-item__icon wi wi-wu-partlycloudy"
   />
   <p
-    aria-label="Weather will be 47 at 12o'clock"
+    aria-label="Weather will be 47 at 12 o'clock"
     className="forecast-conditions"
     tabIndex="0"
   >
