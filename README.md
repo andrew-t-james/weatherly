@@ -51,7 +51,7 @@ The application should have a 7 hour weather forecast component.
 1. ✅ Each hour should be a card component and should display
 the hour an image that reflects the weather the projected temperature
 
-1. Application should handle when a user searches for a location that is not found by the API. Team should research different ways to handle unfound locations by looking around on different weather and other location searching applications and implement a solution for their project that they find intuitive.
+1. ✅ Application should handle when a user searches for a location that is not found by the API. Team should research different ways to handle unfound locations by looking around on different weather and other location searching applications and implement a solution for their project that they find intuitive.
 
 ## Phase three
 
@@ -63,20 +63,20 @@ The application should have a 10 day forecast component. Each day should be a ca
 
 ## Phase four
 
-1. Your application should have a welcome page that greets the user. The welcome page has a search component.
+1. ✅ Your application should have a welcome page that greets the user. The welcome page has a search component.
 
-1. The search component consists of an input field and a submit button that allows the user to search for a location (the location should work with both a zip code and city/state).
+1. ✅ The search component consists of an input field and a submit button that allows the user to search for a location (the location should work with both a zip code and city/state).
 
-1. Once the desired location is submitted there should be a way for the user to change location information. Once the location information is changed the weather should reflect the desired location.
+1. ✅ Once the desired location is submitted there should be a way for the user to change location information. Once the location information is changed the weather should reflect the desired location.
 
 1. location persists after refresh.
 
 ## Phase five
 
-1. Add autocomplete functionality to your search input
+1. A✅ dd autocomplete functionality to your search input
 import your completeMe into your Weathrly project. Populate it with this list of city/states.
 
-1. When a user starts typing in a city/state or zip code display a list of possible suggestions using your completeMe’s suggest function.
+1. ✅ When a user starts typing in a city/state or zip code display a list of possible suggestions using your completeMe’s suggest function.
 
 ## Extensions
 
