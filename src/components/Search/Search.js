@@ -46,7 +46,6 @@ class Search extends Component {
     const  { location } = this.state;
     const { hasError } = this.props;
 
-    console.log(hasError);
     return (
       <header className="header">
         <h1 tabIndex="0" className="header__title" aria-label="Weathrly A weather App">Weathrly</h1>

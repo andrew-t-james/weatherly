@@ -13,7 +13,7 @@ describe('App unit tests', () => {
   });
 
   test('it should render an err message if hasError present', () => {
-    const expected = 'Please Enter a valid City State or Zip';
+    const expected = 'Oops Something went wrong, Please enter valid City and State or Zip';
     const modal = shallow(<Welcome hasError={true} />);
     const actual = modal.find('h2').text();
 
