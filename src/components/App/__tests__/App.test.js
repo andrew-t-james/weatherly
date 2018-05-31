@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
+import TestRenderer from 'react-test-renderer';
 import App from '../App.js';
 import Search from '../../Search/Search.js';
 import TenDayForecast from '../../TenDayForecast/TenDayForecast.js';
@@ -110,12 +110,40 @@ describe('App unit tests', () => {
     expect(actual).toBe(expected);
   });
 
-  test('it should match snapshot', () => {
-    const welcome = renderer
+  test('it should match snapshot when !hasLocation', () => {
+    app.setState({
+      hasLocation: false
+    });
+
+    const renderedApp = TestRenderer
       .create(<Welcome />)
       .toJSON();
 
-    expect(welcome).toMatchSnapshot();
+    expect(renderedApp).toMatchSnapshot();
+  });
+
+  test('it should match snapshot when hasLocation', () => {
+    app.setState({
+      hasLocation: true
+    });
+
+    const renderedApp = TestRenderer
+      .create(<Welcome hasError={false} hasLocation={true} />)
+      .toJSON();
+
+    expect(renderedApp).toMatchSnapshot();
+  });
+
+  test('it should match snapshot when hasError', () => {
+    app.setState({
+      hasError: true
+    });
+
+    const renderedApp = TestRenderer
+      .create(<Welcome hasError={true} hasLocation={false} />)
+      .toJSON();
+
+    expect(renderedApp).toMatchSnapshot();
   });
 
   describe('API Unit tests', () => {

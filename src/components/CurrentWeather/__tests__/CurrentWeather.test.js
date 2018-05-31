@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
+import TestRenderer from 'react-test-renderer';
 import CurrentWeather from '../CurrentWeather.js';
 
 
@@ -49,7 +49,7 @@ describe('Current Weather unit tests', () => {
   });
 
   test('it should match snapshot', () => {
-    const currWeather = renderer
+    const currWeather = TestRenderer
       .create(<CurrentWeather currentWeather={currentLocation} />)
       .toJSON();
 
