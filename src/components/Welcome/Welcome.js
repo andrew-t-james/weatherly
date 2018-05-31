@@ -25,7 +25,12 @@ const Welcome = (props) => {
       {
         hasError &&
         <section className="error-message">
-          <h2 className="error-message__title">Oops Something went wrong, Please enter valid City and State or Zip</h2>
+          <h2
+            tabIndex="0"
+            aria-label="Oops Something went wrong, Please enter valid City and State or Zip"
+            className="error-message__title">
+          Oops Something went wrong, Please enter valid City and State or Zip
+          </h2>
         </section>
       }
     </div>

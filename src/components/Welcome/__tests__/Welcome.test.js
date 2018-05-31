@@ -6,25 +6,25 @@ import Welcome from '../Welcome.js';
 describe('App unit tests', () => {
   test('it should render a welcome message if noLocation present', () => {
     const expected = 'Welcome To Weathrly';
-    const modal = shallow(<Welcome hasLocation={false} />);
-    const actual = modal.find('h2').text();
+    const welcome = shallow(<Welcome hasLocation={false} />);
+    const actual = welcome.find('h2').text();
 
     expect(actual).toBe(expected);
   });
 
   test('it should render an err message if hasError present', () => {
     const expected = 'Oops Something went wrong, Please enter valid City and State or Zip';
-    const modal = shallow(<Welcome hasError={true} />);
-    const actual = modal.find('h2').text();
+    const welcome = shallow(<Welcome hasError={true} />);
+    const actual = welcome.find('h2').text();
 
     expect(actual).toBe(expected);
   });
 
   test('it should match snapshot', () => {
-    const modal = renderer
+    const welcome = renderer
       .create(<Welcome />)
       .toJSON();
 
-    expect(modal).toMatchSnapshot();
+    expect(welcome).toMatchSnapshot();
   });
 });

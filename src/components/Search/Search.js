@@ -64,7 +64,9 @@ class Search extends Component {
           <datalist id="cities">
             {
               cities.map((city, index) =>
-                <option key={index} value={city} />
+                <option
+                  key={index}
+                  value={city} />
               )
             }
           </datalist>
@@ -85,7 +87,7 @@ class Search extends Component {
 
 Search.propTypes = {
   updateLocation: PropTypes.func,
-  location: PropTypes.string,
+  hasError: PropTypes.bool,
   autoComplete: PropTypes.func
 };
 
