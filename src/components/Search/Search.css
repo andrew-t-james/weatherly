@@ -31,11 +31,6 @@
   width: 90%;
 }
 
-.error {
-  border: 0;
-  box-shadow: 0 0 3px rgba(219, 68, 62, 1);
-}
-
 .search-form__input:focus {
   background-color: var(--color-grey-light-3);
   font-size: 2rem;
@@ -78,4 +73,9 @@
 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px var(--color-grey-light-3) inset;
+}
+
+.error {
+  border: 0;
+  box-shadow: 0 0 3px rgba(219, 68, 62, 1);
 }
