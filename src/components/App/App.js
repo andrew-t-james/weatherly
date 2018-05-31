@@ -33,7 +33,6 @@ class App extends Component {
   componentDidMount() {
     const storedLocation = JSON.parse(localStorage.getItem('location'));
 
-    this.updateLocation('Louisville', 'KY');
     if (storedLocation) {
       const { city, state } = storedLocation;
 
