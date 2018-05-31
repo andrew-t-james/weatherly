@@ -124,6 +124,7 @@ describe('App unit tests', () => {
     await app.setState({
       hasLocation: true
     });
+
     done();
 
     expect(app).toMatchSnapshot();
