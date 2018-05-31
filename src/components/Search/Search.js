@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Trie from '../../data-helpers/Trie.js';
+import Trie from 'location-autocomplete-trie';
 import { cities } from '../../data-helpers/cities.js';
 import './Search.css';
 
