@@ -28,6 +28,7 @@
 
 .current-weather__description {
   font-size: 1.7rem;
+  padding: 0 9rem;
 }
 
 .current-weather__icon {

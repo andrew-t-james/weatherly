@@ -128,9 +128,10 @@ describe('App unit tests', () => {
     });
 
     const renderedApp = TestRenderer
-      .create(<Welcome hasError={false} hasLocation={true} />)
+      .create(app)
       .toJSON();
 
+    // console.log(app.debug());
     expect(renderedApp).toMatchSnapshot();
   });
 

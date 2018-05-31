@@ -6133,7 +6133,7 @@ exports[`App unit tests it should match snapshot when hasError 1`] = `
 `;
 
 exports[`App unit tests it should match snapshot when hasLocation 1`] = `
-<section
+<main
   className="container"
 >
   <header
@@ -9175,5 +9175,60 @@ exports[`App unit tests it should match snapshot when hasLocation 1`] = `
       </button>
     </form>
   </header>
-</section>
+  <section
+    className="current-weather"
+  >
+    <h2
+      aria-label={null}
+      className="current-weather__title"
+      tabIndex="0"
+    />
+    <p
+      aria-label={null}
+      className="current-weather__weather"
+      tabIndex="0"
+    />
+    <p
+      aria-label={null}
+      className="current-weather__temperature"
+      tabIndex="0"
+    >
+       °
+    </p>
+    <i
+      alt={null}
+      aria-label={null}
+      className="current-weather__icon wi wi-wu-null"
+      tabIndex="0"
+    />
+  </section>
+  <section
+    className="forecast"
+  >
+    <h1
+      aria-label="Hourly Forecast for the next 7 hours"
+      className="forecast-title"
+      tabIndex="0"
+    >
+      Hourly
+    </h1>
+    <ul
+      className="forecast-list"
+    />
+  </section>
+  <section
+    className="forecast"
+  >
+    <h1
+      aria-label="Daily forecast for the next 10 days"
+      className="forecast-title"
+      tabIndex="0"
+    >
+      Daily
+    </h1>
+    <ul
+      className="forecast-list"
+    />
+  </section>
+</main>
 `;
