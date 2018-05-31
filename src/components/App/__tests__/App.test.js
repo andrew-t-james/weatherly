@@ -118,13 +118,16 @@ describe('App unit tests', () => {
     expect(renderedApp).toMatchSnapshot();
   });
 
-  test('it should match snapshot when hasLocation', () => {
-    const renderedApp = TestRenderer
-      .create(<App />)
-      .toJSON();
+  test('it should match snapshot when hasLocation', (done) => {
+    const app = shallow( <App />);
 
-    console.log(renderedApp);
-    // expect(renderedApp).toMatchSnapshot();
+    setTimeout(()=>{
+      expect(
+        app.setState({
+          hasLocation: true
+        })).toMatchSnapshot();
+      done();
+    }, 100);
   });
 
   test('it should match snapshot when hasError', () => {
