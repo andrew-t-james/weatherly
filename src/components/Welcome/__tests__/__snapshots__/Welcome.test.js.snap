@@ -3034,7 +3034,7 @@ exports[`App unit tests it should match snapshot 1`] = `
       </datalist>
       <button
         aria-label="Search for weather"
-        className="search-form__button"
+        className="search-form__button "
         disabled={true}
         tabIndex="0"
         type="submit"

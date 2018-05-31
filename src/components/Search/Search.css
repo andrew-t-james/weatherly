@@ -75,3 +75,7 @@ input:-webkit-autofill {
   border: 0;
   box-shadow: 0 0 3px rgba(219, 68, 62, 1);
 }
+
+.button-error {
+  border-left: 1px solid #ECC8C5;
+}

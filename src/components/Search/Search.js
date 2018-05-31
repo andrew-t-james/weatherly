@@ -78,7 +78,7 @@ class Search extends Component {
           <button
             tabIndex="0"
             aria-label="Search for weather"
-            className="search-form__button"
+            className={`search-form__button ${hasError ? 'button-error' : ''}`}
             type="submit"
             disabled={!location.trim(' ')}>
             Search
