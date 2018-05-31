@@ -80,7 +80,6 @@ class Search extends Component {
             aria-label="Search for weather"
             className="search-form__button"
             type="submit"
-
             disabled={!location.trim(' ')}>
             Search
           </button>

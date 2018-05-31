@@ -15,12 +15,17 @@ const Welcome = (props) => {
         updateLocation={updateLocation} />
       {
         !hasLocation && !hasError &&
-          <div className="welcome">
-            <h2 tabIndex="0" className="welcome__title" aria-label="Welcome to Weathrly a weather App">Welcome To <span className="header__title">Weathrly</span></h2>
+          <section className="welcome">
+            <h2
+              tabIndex="0"
+              className="welcome__title"
+              aria-label="Welcome to Weathrly a weather App">
+            Welcome To <span className="header__title">Weathrly</span>
+            </h2>
             <video aria-label="Time lapse of clouds" loop muted autoPlay poster={stormPoster} className="welcome__video">
               <source src={storm} type="video/mp4" />
             </video>
-          </div>
+          </section>
       }
       {
         hasError &&

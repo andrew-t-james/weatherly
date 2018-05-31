@@ -3043,7 +3043,7 @@ exports[`App unit tests it should match snapshot 1`] = `
       </button>
     </form>
   </header>
-  <div
+  <section
     className="welcome"
   >
     <h2
@@ -3071,6 +3071,6 @@ exports[`App unit tests it should match snapshot 1`] = `
         type="video/mp4"
       />
     </video>
-  </div>
+  </section>
 </div>
 `;
