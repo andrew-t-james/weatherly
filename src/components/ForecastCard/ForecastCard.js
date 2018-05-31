@@ -30,7 +30,7 @@ const ForecastCard = props => {
             {day}
           </h2>
       }
-      <i className={`forecast-list-item__icon wi wi-wu-${iconTitle}`}  alt={iconTitle}/>
+      {iconTitle && <i className={`forecast-list-item__icon wi wi-wu-${iconTitle}`}  alt={iconTitle} />}
       {
         conditions &&
         <p

@@ -41,7 +41,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
   line-height: 1.6;
-  color: var(--color-grey-dark-2);
+  color: var(--color-grey-dark-1);
   background: url('../image/background.svg');
   background-size: cover;
   background-repeat: no-repeat;

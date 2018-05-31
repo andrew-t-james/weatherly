@@ -28,9 +28,9 @@ class Search extends Component {
 
   submitLocation(event) {
     const { location } = this.state;
-    const splitString = location.trim(' ').split(', ');
-    const city = splitString[0];
-    const state = splitString[1];
+    const sanitizedUserInput = location.split(', ');
+    const city = sanitizedUserInput[0];
+    const state = sanitizedUserInput[1];
 
     event.preventDefault();
     this.props.updateLocation(city, state);
@@ -48,7 +48,12 @@ class Search extends Component {
 
     return (
       <header className="header">
-        <h1 tabIndex="0" className="header__title" aria-label="Weathrly A weather App">Weathrly</h1>
+        <h1
+          tabIndex="0"
+          className="header__title"
+          aria-label="Weathrly A weather App">
+        Weathrly
+        </h1>
         <form
           className="search-form"
           onSubmit={event => this.submitLocation(event)}>

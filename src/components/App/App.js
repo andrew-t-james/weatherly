@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { API_KEY } from '../../API_KEY.js';
 import { dailyForecast, hourlyForecast, locationForecast } from '../../data-helpers/data-helpers.js';
 import CurrentWeather from '../CurrentWeather/CurrentWeather.js';
-import Welcome from '../Welcome/Welcome.js';
 import Search from '../Search/Search.js';
 import SevenHour from '../SevenHour/SevenHour.js';
 import TenDayForecast from '../TenDayForecast/TenDayForecast.js';
-import './App.css';
+import Welcome from '../Welcome/Welcome.js';
 
 class App extends Component {
   constructor() {
@@ -34,6 +33,7 @@ class App extends Component {
   componentDidMount() {
     const storedLocation = JSON.parse(localStorage.getItem('location'));
 
+    this.updateLocation('Louisville', 'KY');
     if (storedLocation) {
       const { city, state } = storedLocation;
 
