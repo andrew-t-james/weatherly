@@ -30,6 +30,12 @@ Your app should have at a minimum the following components.
 #### Design Requirements
 Your Readme should include wireframes of your app.
 
+![mockup](./src/image/mockup.JPG)
+
+### LightHouse Accessibility Report
+**Lighthouse Report is in the root of this project**
+![accessibility-lighthouse](./src/image/accessibility.png)
+
 ## Phase one
 Create your Current Weather component
 
@@ -81,11 +87,11 @@ import your completeMe into your Weathrly project. Populate it with this list of
 ## Extensions
 
 1. If a user clicks on a specific day on the 10 day forecast the application should display an hourly breakdown of the forecasted weather for a 24-hour period.
-1. For each hour it should display an image that reflects the weather
-1. For each hour it should display the projected temperature and the hour
+1. ✅ For each hour it should display an image that reflects the weather
+1. ✅ For each hour it should display the projected temperature and the hour
 Add one or two examples of Micro-Interactions found on Dribbble or Behance in your ReadMe that inspired your design
 
 1. The application is fully accessible.
-1. The application can be used without a mouse
+1. ✅ The application can be used without a mouse
 zero axe-core violations
 1. Use Sass / SCSS to style your projects
