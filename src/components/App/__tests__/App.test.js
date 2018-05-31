@@ -98,7 +98,7 @@ describe('App unit tests', () => {
     expect(actual).toBe(expected);
   });
 
-  test('should display an Welcome if hasError is true', async () => {
+  test('should display an Welcome if hasError is true', () => {
     const expected = 1;
 
     app.setState({
