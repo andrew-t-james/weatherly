@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
+import TestRenderer from 'react-test-renderer';
 import Welcome from '../Welcome.js';
 
 describe('App unit tests', () => {
@@ -21,7 +21,7 @@ describe('App unit tests', () => {
   });
 
   test('it should match snapshot', () => {
-    const welcome = renderer
+    const welcome = TestRenderer
       .create(<Welcome />)
       .toJSON();
 

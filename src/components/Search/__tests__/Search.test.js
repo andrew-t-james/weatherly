@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
+import TestRenderer from 'react-test-renderer';
 import Search from '../Search.js';
 
 describe('Search Unit Test', () => {
@@ -135,7 +135,7 @@ describe('Search Unit Test', () => {
   });
 
   test('it should match snapshot', () => {
-    const search = renderer
+    const search = TestRenderer
       .create(<Search updateLocation={mockFn} />)
       .toJSON();
 

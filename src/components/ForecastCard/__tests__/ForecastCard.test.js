@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import renderer from 'react-test-renderer';
+import TestRenderer from 'react-test-renderer';
 import ForecastCard from '../ForecastCard.js';
 
 describe('ForecastCard Unit tests', () => {
@@ -88,7 +88,7 @@ describe('ForecastCard Unit tests', () => {
   });
 
   test('it should match snapshot with hour forecast', () => {
-    const card = renderer
+    const card = TestRenderer
       .create(<ForecastCard forecast={oneHour} />)
       .toJSON();
 
@@ -96,7 +96,7 @@ describe('ForecastCard Unit tests', () => {
   });
 
   test('it should match snapshot with daily forecast', () => {
-    const card = renderer
+    const card = TestRenderer
       .create(<ForecastCard forecast={oneDayForecast} />)
       .toJSON();
 
