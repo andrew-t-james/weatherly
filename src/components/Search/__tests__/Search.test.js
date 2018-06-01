@@ -112,7 +112,7 @@ describe('Search Unit Test', () => {
   test('When form submitLocation method is invoked with the correct arguments', () => {
     let location = 'Louisville, KY';
 
-    location.trim(jest.fn()).split(jest.fn());
+    location.split(', ');
 
     location = ['Louisville', 'KY'];
 
