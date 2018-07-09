@@ -13,7 +13,7 @@ In this project you will be getting your first real interactions with ReactJS, a
 
 ##### Demo
 
-You can view the demo [here](weatherly-react.surge.sh).
+You can view the demo [here](https://weatherly-react.surge.sh/).
 
 ##### **Required Technology**
 ReactJS
