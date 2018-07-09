@@ -39,23 +39,23 @@ html {
 }
 
 body {
+  background: url('../image/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-grey-dark-1);
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
   line-height: 1.6;
-  color: var(--color-grey-dark-1);
-  background: url('../image/background.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
   min-height: 100vh;
 }
 
 .container {
-  max-width: 120rem;
-  margin: 5rem auto;
   background-color: var(--color-grey-light-1);
-  box-shadow: var(--shadow-dark);
-  min-height: 50rem;
   border-radius: 4px;
+  box-shadow: var(--shadow-dark);
+  margin: 5rem auto;
+  max-width: 120rem;
+  min-height: 50rem;
 }
 
 @media only screen and (max-width: 75em) {
