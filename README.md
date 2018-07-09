@@ -7,6 +7,10 @@ As web developers you’re going to be living in the context of the web. With th
 
 In this project you will be getting your first real interactions with ReactJS, asynchronous javascript, and managing the state of your application.
 
+##### Demo
+
+You can view the demo [here](weatherly-react.surge.sh).
+
 ##### **Required Technology**
 ReactJS
 fetch for api requests
@@ -31,6 +35,7 @@ Your app should have at a minimum the following components.
 Your Readme should include wireframes of your app.
 
 ![mockup](./src/image/mockup.JPG)
+![build](./src/image/weatherly.png)
 
 ### LightHouse Accessibility Report
 **Lighthouse Report is in the root of this project**
