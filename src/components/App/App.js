@@ -41,7 +41,7 @@ class App extends Component {
   }
 
   updateLocation(city, state) {
-    const apiEndPoint = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/${state}/${city}.json`;
+    const apiEndPoint = `https://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/${state}/${city}.json`;
 
     localStorage.setItem('location', JSON.stringify({city, state}));
 

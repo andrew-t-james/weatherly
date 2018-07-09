@@ -140,7 +140,7 @@ describe('App unit tests', () => {
 
   describe('API Unit tests', () => {
     test('should have been called with correct url', async () => {
-      const apiEndPoint = `http://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/KY/Louisville.json`;
+      const apiEndPoint = `https://api.wunderground.com/api/${API_KEY}/forecast/forecast10day/conditions/hourly/q/KY/Louisville.json`;
 
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.resolve({
