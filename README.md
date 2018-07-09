@@ -31,10 +31,7 @@ Your app should have at a minimum the following components.
 **10 Day Forecast**
 **Card (used in 7 hour and 10 day)**
 
-#### Design Requirements
-Your Readme should include wireframes of your app.
-
-![mockup](./src/image/mockup.JPG)
+#### Design
 ![build](./src/image/weatherly.png)
 
 ### LightHouse Accessibility Report
